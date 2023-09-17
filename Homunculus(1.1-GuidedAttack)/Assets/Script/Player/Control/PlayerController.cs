@@ -7,10 +7,14 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpPower;
     private int jumpTime;
-    private float rollDistance;
     private float curTime;
     private float coolTime;
     private bool restrictMoving;
+
+    private bool canDodge = true;
+    private float dodgePower = 7.0f;
+    private float dodgeTime = 0.2f;
+    private float dodgeCooldown = 1f;
 
     public FadeInOut fadeInOut;
     public GameManager gameManager;
@@ -24,7 +28,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         jumpTime = 2;
-        rollDistance = 0.5f;
         restrictMoving = false;
         attack = GetComponent<Attack>();
         rangedAttack = GetComponentInChildren<RangedAttack>();
@@ -37,14 +40,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (restrictMoving == true) return;
+        if (restrictMoving || anim.GetBool("isDodging")) return;
 
         Move();
         Jump();
         Attack();
         ChangeWeapon();
-        if (Input.GetKeyDown(KeyCode.LeftShift)) StartCoroutine(Dodge());
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge) StartCoroutine(DodgeRoll());
     }
+
+    void SetPlayerImmortal() { gameObject.layer = 9; }
+    void SetPlayerMortal() { gameObject.layer = 8; }
 
     void Move()
     {
@@ -69,6 +75,8 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
+        if (anim.GetBool("isDodging")) return;
+
         if (Input.GetKeyDown(KeyCode.Space) && jumpTime > 0)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
@@ -76,7 +84,7 @@ public class PlayerController : MonoBehaviour
             if (jumpTime > 0) jumpTime--;
         }
 
-        // Check player is jumping or not
+        // y축 속도와 가속도가 모두 0일 때 공중에 있는 상태가 아님으로 판정
         if (rigid.velocity.y == 0 && rigid.velocity.y / Time.deltaTime == 0)
         {
             anim.SetBool("isJumping", false);
@@ -104,22 +112,29 @@ public class PlayerController : MonoBehaviour
             curTime -= Time.deltaTime;
         }
     }
-    IEnumerator Dodge()
+
+    IEnumerator DodgeRoll()
     {
-        SetPlayerImmortal();
-        restrictMoving = true;
+        if (anim.GetBool("isJumping")) yield break;
+
+        // 굴러서 나아갈 방향 설정
+        Vector2 moveDir;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        moveDir = new Vector2(horizontalInput, 0).normalized;
+
+        // 구르기
         anim.SetBool("isDodging", true);
+        canDodge = false;
+        rigid.velocity = new Vector2(moveDir.x * dodgePower, 0f);
 
-        rigid.velocity = new Vector2(transform.forward.x * 4.0f, transform.position.y);
-
-        yield return new WaitForSeconds(0.3f);
-
-        SetPlayerMortal();
-        restrictMoving = false;
+        // 구르기 판정 지속시간
+        yield return new WaitForSeconds(dodgeTime);
         anim.SetBool("isDodging", false);
+  
+        // 구르기 쿨타임
+        yield return new WaitForSeconds(dodgeCooldown);
+        canDodge = true;
     }
-    void SetPlayerImmortal() { gameObject.layer = 9; }
-    void SetPlayerMortal() { gameObject.layer = 8; }
 
     void ChangeWeapon()
     {
