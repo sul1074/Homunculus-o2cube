@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
         
         if (rayHit2.collider != null && boxCollider.enabled != false)//jump
         {
-           gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 0.4f, ForceMode2D.Impulse);
+           gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 0.2f, ForceMode2D.Impulse);
         }
 
         float rayfrontDistance = 10f;
