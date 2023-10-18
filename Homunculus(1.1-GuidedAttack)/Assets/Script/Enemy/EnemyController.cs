@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     int randomVelocity;
+    private int hpMax = 25;
     public Slider hp;
     Rigidbody2D rigid;
     Animator anim;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider;
+
+    static GameManager gameManager;
     public float moveSpeed = 1f;
     private int value = 0;
     private bool playerDetected = false;
@@ -122,8 +125,6 @@ public class EnemyController : MonoBehaviour
             //Turn();
         }
         if (randomVelocity != 0) spriteRenderer.flipX = randomVelocity == -1;
-
-        if (hp.value <= 0) die();
     }
 
     IEnumerator randomMove()
@@ -154,10 +155,18 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void OnDamaged()
+    public bool OnDamaged(float playerAtkDamage)
     {
-        hp.value -= 0.5f;
+        hp.value -= (playerAtkDamage / hpMax);
         gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+
+        if (hp.value <= 0)
+        {
+            die();
+            GameManager.globalGameManager.adjustExp(5.0f);
+            return true;
+        }
+        else return false;
     }
 
     void Turn()

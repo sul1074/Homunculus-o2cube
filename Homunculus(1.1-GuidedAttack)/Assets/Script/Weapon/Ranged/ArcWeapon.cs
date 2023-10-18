@@ -36,7 +36,7 @@ public class ArcWeapon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyController>().OnDamaged();
+            collision.gameObject.GetComponent<EnemyController>().OnDamaged(10.0f);
             Destroy(this.gameObject);
         }
     }

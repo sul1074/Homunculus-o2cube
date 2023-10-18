@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigid;
     Animator anim;
+    PlayerStatus playerStatus;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,9 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        coolTime = 0.5f;
+        playerStatus = GetComponent<PlayerStatus>();
+        gameManager.updateStatus();
+        coolTime = playerStatus.getAtkSpeed();
     }
 
     // Update is called once per frame
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z)) // melee attack
             {
-                attack.DoAttack();
+                attack.DoAttack(playerStatus.getAtkPoint());
                 curTime = coolTime;
             }
 
@@ -196,7 +199,7 @@ public class PlayerController : MonoBehaviour
     void OnAttack(Transform enemy)
     {
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
-        enemyController.OnDamaged();
+        enemyController.OnDamaged(playerStatus.getAtkPoint());
         gameManager.stagePoint += 100;
         rigid.AddForce(Vector2.up * 11, ForceMode2D.Impulse);
     }
@@ -205,7 +208,7 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.layer = 9;
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        gameManager.HealthDown();
+        gameManager.HealthDown(20.0f);
 
         int physicDirection = transform.position.x - targetPos.x > 0 ? 1 : -1;
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(physicDirection, 7), ForceMode2D.Impulse);
@@ -231,4 +234,6 @@ public class PlayerController : MonoBehaviour
     {
         rigid.velocity = Vector2.zero;
     }
+
+    public void expUp(float exp) { gameManager.adjustExp(exp); }
 }

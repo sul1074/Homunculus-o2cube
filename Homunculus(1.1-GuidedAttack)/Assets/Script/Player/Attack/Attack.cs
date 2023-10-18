@@ -19,7 +19,7 @@ public class Attack : MonoBehaviour
     {
     }
 
-    public void DoAttack()
+    public void DoAttack(float damage)
     {
         if(true /* 현재 무기가 근접 공격일 경우(추후 추가)*/)
         {
@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
             {
                 if (collider.tag == "Enemy")
                 {
-                    collider.GetComponent<EnemyController>().OnDamaged();
+                    collider.GetComponent<EnemyController>().OnDamaged(damage);
                     break;
                 }
             }

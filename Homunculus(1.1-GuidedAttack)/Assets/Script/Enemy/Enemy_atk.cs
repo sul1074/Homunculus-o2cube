@@ -27,7 +27,7 @@ public class Enemy_atk : MonoBehaviour
         if (hit.collider != null)
         {
             
-            Debug.Log("Player find. Do attack.");
+            // Debug.Log("Player find. Do attack.");
 
             
             Attack();
