@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public FadeInOut fadeInOut;
     public GameManager gameManager;
+    public TalkPrinter talkPrinter;
+    private GameObject interactingNPC = null;
+    public GameObject player;
+    bool playertalking;
     Attack attack;
     RangedAttack rangedAttack;
     SpriteRenderer spriteRenderer;
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
         playerStatus = GetComponent<PlayerStatus>();
         gameManager.updateStatus();
         coolTime = playerStatus.getAtkSpeed();
+        playertalking = true;
     }
 
     // Update is called once per frame
@@ -49,7 +54,8 @@ public class PlayerController : MonoBehaviour
         Jump();
         Attack();
         ChangeWeapon();
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge) StartCoroutine(DodgeRoll());
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge && !talkPrinter.isTalking) StartCoroutine(DodgeRoll());
+        Talk();
     }
 
     void SetPlayerImmortal() { gameObject.layer = 9; }
@@ -58,7 +64,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         Vector2 moveDir;
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = talkPrinter.isTalking ? 0 : Input.GetAxis("Horizontal");
 
         if (horizontalInput != 0)
         {
@@ -80,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (anim.GetBool("isDodging")) return;
 
-        if (Input.GetKeyDown(KeyCode.Space) && jumpTime > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpTime > 0 && !talkPrinter.isTalking)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -147,6 +153,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Talk()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && interactingNPC != null)
+        {
+            if (playertalking == true)
+            {
+                talkPrinter.Talk(interactingNPC);
+                playertalking = false;
+            }
+            else if (playertalking == false)
+            {
+                talkPrinter.Talk(player);
+                playertalking = true;
+            }
+        }
+    }
+
     public IEnumerator TeleportInDungeon(Vector2 teleportPos) 
     {
         restrictMoving = true;
@@ -193,6 +216,19 @@ public class PlayerController : MonoBehaviour
         else if(collision.gameObject.tag == "Finish")
         {
             gameManager.NextStage();
+        }
+
+        else if (collision.gameObject.tag == "Npc")
+        {
+            interactingNPC = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject == interactingNPC)
+        {
+            interactingNPC = null;
         }
     }
 

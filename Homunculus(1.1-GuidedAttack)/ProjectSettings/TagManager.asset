@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Room
   - Weapon
+  - Npc
   layers:
   - Default
   - TransparentFX
