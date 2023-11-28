@@ -76,7 +76,7 @@ public class AssignRoom : MonoBehaviour
         }
     }
 
-    private int roomNums;
+    [SerializeField] private int roomNums;
     private int standardPos;
     private int rootOfRoomPosNum;
     private int remainRoomNums;
@@ -90,7 +90,7 @@ public class AssignRoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roomNums = 20;
+        //roomNums = 20; "던전 A~G까지만 생성하기 위해 주석처리 후 인스펙터에서 조정할 수 있게 변경했음"
         standardPos = 45;   // DungeonDoor.cs와 DoorManager.cs의 maxRayDistance도 함께 수정해줘야 문이 정상적으로 생성 됨.
         rootOfRoomPosNum = 7;   // 배정될 수 있는 방 위치의 갯수는 = (해당 변수 * 해당 변수)로, 정사각형 형태임.
         remainRoomNums = roomNums;
