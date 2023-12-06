@@ -23,7 +23,7 @@ public class Attack : MonoBehaviour
     {
         if(true /* 현재 무기가 근접 공격일 경우(추후 추가)*/)
         {
-            anim.SetTrigger("isAttacking");
+            anim.SetTrigger("Attack");
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
             foreach (Collider2D collider in collider2Ds)
             {

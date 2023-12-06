@@ -21,25 +21,29 @@ public class PlayerController : MonoBehaviour
     public TalkPrinter talkPrinter;
     private GameObject interactingNPC = null;
     public GameObject player;
+    public Transform attackRangeBoxTransform;
     bool playertalking;
-    Attack attack;
-    RangedAttack rangedAttack;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rigid;
-    Animator anim;
-    PlayerStatus playerStatus;
+
+    private Attack attack;
+    private RangedAttack rangedAttack;
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rigid;
+    private Animator anim;
+    private PlayerStatus playerStatus;
+    private WeaponParent weaponParent;
 
     // Start is called before the first frame update
     void Start()
     {
         jumpTime = 2;
         restrictMoving = false;
-        attack = GetComponent<Attack>();
+        attack = GetComponentInChildren<Attack>();
         rangedAttack = GetComponentInChildren<RangedAttack>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerStatus = GetComponent<PlayerStatus>();
+        weaponParent = GetComponentInChildren<WeaponParent>();
         gameManager.updateStatus();
         coolTime = playerStatus.getAtkSpeed();
         playertalking = true;
@@ -48,14 +52,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePointer = getPointerInput();
         if (restrictMoving || anim.GetBool("isDodging")) return;
 
         Move();
         Jump();
+        RotateWeapon(mousePointer);
+        FlipPlayerAndAttackRangeTowardsMouse(mousePointer);
         Attack();
         ChangeWeapon();
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge && !talkPrinter.isTalking) StartCoroutine(DodgeRoll());
         Talk();
+
     }
 
     void SetPlayerImmortal() { gameObject.layer = 9; }
@@ -69,12 +77,8 @@ public class PlayerController : MonoBehaviour
         if (horizontalInput != 0)
         {
             moveDir = new Vector2(horizontalInput, 0);
-            
-            // 플레이어 이동
-            transform.Translate(moveDir * (horizontalInput > 0 ? moveSpeed : -moveSpeed) * Time.deltaTime);
 
-            // 플레이어 방향전환
-            transform.eulerAngles = new Vector2(0, horizontalInput > 0 ? 0 : 180);
+            transform.Translate(moveDir * moveSpeed * Time.deltaTime);
             anim.SetBool("isWalking", true);
         }
         else
@@ -104,7 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         if (curTime <= 0)   // Attack
         {
-            if (Input.GetKeyDown(KeyCode.Z)) // melee attack
+            if (Input.GetMouseButtonDown(0)) // melee attack
             {
                 attack.DoAttack(playerStatus.getAtkPoint());
                 curTime = coolTime;
@@ -170,6 +174,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void RotateWeapon(Vector2 dir) { weaponParent.PointerPosition = dir; }
+    private void FlipPlayerAndAttackRangeTowardsMouse(Vector2 dir)
+    {
+        // 플레이어의 현재 위치에서 마우스 포인터의 위치를 향하는 벡터를 계산
+        Vector2 direction = dir - (Vector2)transform.position;
+
+        Vector3 attackBoxLocalPosition = attackRangeBoxTransform.localPosition;
+        attackBoxLocalPosition.x = -attackBoxLocalPosition.x;
+
+        // 플레이어 방향전환
+        if (direction.x > 0)
+        {
+            // 캐릭터 스프라이트 반대로 전환
+            spriteRenderer.flipX = false;
+
+            // 근접공격 범위 박스 위치 반대로 전환
+            if (attackBoxLocalPosition.x < 0) return;
+            attackRangeBoxTransform.localPosition = attackBoxLocalPosition;
+        }
+        else
+        {
+            // 캐릭터 스프라이트 반대로 전환
+            spriteRenderer.flipX = true;
+
+            // 근접공격 범위 박스 위치 반대로 전환
+            if (attackBoxLocalPosition.x > 0) return;
+            attackRangeBoxTransform.localPosition = attackBoxLocalPosition;
+        }
+    }
+
     public IEnumerator TeleportInDungeon(Vector2 teleportPos) 
     {
         restrictMoving = true;
@@ -184,41 +218,13 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            if(rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
-            {
-                OnAttack(collision.transform);
-            }
-            else OnDamaged(collision.transform.position);
-
-        }
-
-        else if(collision.gameObject.tag == "Spring" && transform.position.y > collision.transform.position.y + (collision.transform.localScale.y / 2f))
-        {
-            rigid.AddForce(Vector2.up * 16, ForceMode2D.Impulse);
+            OnDamaged(collision.transform.position);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Item")
-        {
-            bool isBronze = collision.gameObject.name.Contains("Bronze");
-            bool isSilver= collision.gameObject.name.Contains("Silver");
-            bool isGold = collision.gameObject.name.Contains("Gold");
-
-            if(isBronze) gameManager.stagePoint += 50;
-            else if(isSilver) gameManager.stagePoint += 100;
-            else if(isGold) gameManager.stagePoint += 200;
-
-            collision.gameObject.SetActive(false);
-        }
-
-        else if(collision.gameObject.tag == "Finish")
-        {
-            gameManager.NextStage();
-        }
-
-        else if (collision.gameObject.tag == "Npc")
+        if (collision.gameObject.tag == "Npc")
         {
             interactingNPC = collision.gameObject;
         }
@@ -236,7 +242,6 @@ public class PlayerController : MonoBehaviour
     {
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
         enemyController.OnDamaged(playerStatus.getAtkPoint());
-        gameManager.stagePoint += 100;
         rigid.AddForce(Vector2.up * 11, ForceMode2D.Impulse);
     }
 
@@ -269,6 +274,13 @@ public class PlayerController : MonoBehaviour
     public void VelocityZero()
     {
         rigid.velocity = Vector2.zero;
+    }
+
+    private Vector2 getPointerInput()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        return Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     public void expUp(float exp) { gameManager.adjustExp(exp); }
