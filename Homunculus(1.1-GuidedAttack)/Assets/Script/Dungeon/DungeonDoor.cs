@@ -14,7 +14,7 @@ public class DungeonDoor : MonoBehaviour
     void Start()
     {
         isInDoorArea = false;
-        maxRayDistance = 45f;
+        maxRayDistance = 60f;
         roomScanner = GetComponentInParent<DoorManager>();
     }
 

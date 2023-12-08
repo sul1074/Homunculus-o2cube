@@ -16,7 +16,7 @@ public class DoorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxRayDistance = 45f;
+        maxRayDistance = 60f;
         isClearedRoom = false;
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxColliderSize = boxCollider2D.size;
