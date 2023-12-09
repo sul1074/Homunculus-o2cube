@@ -16,7 +16,7 @@ public class DoorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxRayDistance = 60f;
+        maxRayDistance = 70f;
         isClearedRoom = false;
         boxCollider2D = GetComponent<BoxCollider2D>();
         boxColliderSize = boxCollider2D.size;
@@ -56,7 +56,7 @@ public class DoorManager : MonoBehaviour
     void CreateEastDoor()
     {
         // 본인 scanner와 충돌을 피하기 위해 한칸 앞에서 발사
-        if (Physics2D.Raycast(new Vector3(transform.position.x + 1 + boxColliderSize.x / 2, transform.position.y, transform.position.z), transform.right, maxRayDistance, LayerMask.GetMask("RoomScanner")))
+        if (Physics2D.Raycast(new Vector3(transform.position.x + 2 + boxColliderSize.x / 2, transform.position.y, transform.position.z), transform.right, maxRayDistance, LayerMask.GetMask("RoomScanner")))
         {
             wall[0].SetActive(false);
             closedDoor[0].SetActive(true);
@@ -65,7 +65,7 @@ public class DoorManager : MonoBehaviour
 
     void CreateWestDoor()
     {
-        if (Physics2D.Raycast(new Vector3(transform.position.x  - 1 - boxColliderSize.x / 2, transform.position.y, transform.position.z), -1 * (transform.right), maxRayDistance, LayerMask.GetMask("RoomScanner")))
+        if (Physics2D.Raycast(new Vector3(transform.position.x  - 2 - boxColliderSize.x / 2, transform.position.y, transform.position.z), -1 * (transform.right), maxRayDistance, LayerMask.GetMask("RoomScanner")))
         {
             wall[1].SetActive(false);
             closedDoor[1].SetActive(true);
@@ -74,7 +74,7 @@ public class DoorManager : MonoBehaviour
 
     void CreateSouthDoor()
     {
-        if (Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 1 - boxColliderSize.y / 2, transform.position.z), -1*(transform.up), maxRayDistance, LayerMask.GetMask("RoomScanner")))
+        if (Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y - 2 - boxColliderSize.y / 2, transform.position.z), -1*(transform.up), maxRayDistance, LayerMask.GetMask("RoomScanner")))
         {
             wall[2].SetActive(false);
             closedDoor[2].SetActive(true);
@@ -82,7 +82,7 @@ public class DoorManager : MonoBehaviour
     }
     void CreateNorthDoor()
     {
-        if (Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 1 + boxColliderSize.y / 2, transform.position.z), transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner")))
+        if (Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + 2 + boxColliderSize.y / 2, transform.position.z), transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner")))
         {
             wall[3].SetActive(false);
             closedDoor[3].SetActive(true);
