@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   object: {fileID: 1935575505}
-  images:
+  imagecomponents:
   - {fileID: 2061583453}
   - {fileID: 172031856}
   - {fileID: 1033380666}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   - {fileID: 390115882}
   - {fileID: 255094415}
   - {fileID: 1397678274}
-  ints: 0000000001000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  intitemvalues: 0000000001000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   sprites:
   - {fileID: 21300000, guid: 3458c119c69e9bc4f9647599c2901dee, type: 3}
   - {fileID: 21300000, guid: 5d52b20f865aff242bfcb08c3b6f61a5, type: 3}
@@ -3053,6 +3053,10 @@ PrefabInstance:
     - target: {fileID: 577265761909680315, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
       propertyPath: m_Name
       value: Item (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790150966672076955, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
       propertyPath: m_Pivot.x
@@ -4885,15 +4889,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.3062774, b: 0.3062774, a: 0.392}
+  m_Color: {r: 0.8301887, g: 0.47513938, b: 0.47513938, a: 0.99215686}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c8f63bc89460b8b4abd82c1be2af1cd3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5502,8 +5506,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6340,6 +6344,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 577265761909680315, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a4584efdd7a20994badc3885afe44a55, type: 3}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Color.b
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Color.g
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Color.r
+      value: 0.745283
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654733357046560277, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4113758019486286960, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6443,6 +6475,10 @@ PrefabInstance:
     - target: {fileID: 6958281183387662775, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: test, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958281183387662775, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6958281183387662775, guid: 04f0e938b0ad6d54285ddfc4438a0371, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

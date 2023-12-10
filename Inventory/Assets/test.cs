@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using static ItemClass;
 
 public class test : MonoBehaviour
 {
@@ -10,12 +13,12 @@ public class test : MonoBehaviour
     /// <summary>
     /// 이미지 컴포넌트들
     /// </summary>
-    public List<Image> images;
+    public List<Image> imagecomponents;
 
     /// <summary>
     /// 저장된 아이템값들
     /// </summary>
-    public List<int> ints;
+    public List<ItemClass> intitemvalues;
 
     /// <summary>
     /// 표시할 이미지들
@@ -42,19 +45,20 @@ public class test : MonoBehaviour
     public ItemClass itemClass;
     public List<ItemClass> itemClasses;
 
+    public List<ItemClass> equippedItems;
+
     // Start is called before the first frame update
     void Start()
     {
+    
         //클래스 초기화
-        itemClass = new ItemClass("3뚝", 100, 50);
-        Debug.Log(itemClass.stringItemName );
-        Debug.Log(itemClass.hp);
-        Debug.Log(itemClass.mp);
+        itemClass = new ItemClass(001,"투구",01, AttackType.Melee, HandType.TwoHanded ,true,4,5);
+        
 
 
         itemClasses = new List<ItemClass>();
         itemClasses.Add(itemClass);
-        Debug.Log(itemClasses[0].stringItemName);
+        //Debug.Log(itemClasses[0].stringItemName);
     }
 
     // Update is called once per frame
@@ -87,19 +91,19 @@ public class test : MonoBehaviour
     public void ChangeImage()
     {
         // 일반 인벤토리 아이콘 변경
-        for (int i = 0; i < images.Count; i++)
+        for (int i = 0; i < imagecomponents.Count; i++)
         {
-            if (ints[i] == 0)
+            if (intitemvalues[i].ItemID == 0)
             {
-                images[i].gameObject.transform.GetChild(1).GetComponent<Image>().sprite = sprites[0];
+                imagecomponents[i].gameObject.transform.GetChild(1).GetComponent<Image>().sprite = sprites[0];
             }
-            else if (ints[i] == 1)
+            else if (intitemvalues[i] == 1)
             {
-                images[i].transform.GetChild(1).GetComponent<Image>().sprite = sprites[1];
+                imagecomponents[i].transform.GetChild(1).GetComponent<Image>().sprite = sprites[1];
             }
             else
             {
-                images[i].transform.GetChild(1).GetComponent<Image>().sprite = sprites[2];
+                imagecomponents[i].transform.GetChild(1).GetComponent<Image>().sprite = sprites[2];
             }
         }
 
@@ -121,9 +125,9 @@ public class test : MonoBehaviour
         }
 
         //인벤토리 색상
-        for (int i = 0; i < images.Count; i++)
+        for (int i = 0; i < imagecomponents.Count; i++)
         {
-            images[i].transform.GetChild(1).GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
+            imagecomponents[i].transform.GetChild(1).GetComponent<Image>().color = new Color(255 / 255f, 255 / 255f, 255 / 255f, 255 / 255f);
         }
 
         // 장비창 색상
@@ -135,13 +139,13 @@ public class test : MonoBehaviour
         if (index != -1)
         {
 
-            images[index].transform.GetChild(1).GetComponent<Image>().color = new Color(0 / 255f, 0 / 255f, 0 / 255f, 255/ 255f);
+            imagecomponents[index].transform.GetChild(1).GetComponent<Image>().color = new Color(0 / 255f, 0 / 255f, 0 / 255f, 255/ 255f);
         }
 
 
         if(index != -1)
         {
-            GetText.text = "지금 고른 숫자는 " + ints[index];
+            GetText.text = "지금 고른 숫자는 " + intitemvalues[index];
         }
         else
         {
@@ -165,9 +169,9 @@ public class test : MonoBehaviour
             }
             else
             {
-                int t = ints[index];
-                ints[index] = ints[inpus];
-                ints[inpus] = t;
+                int t = intitemvalues[index];
+                intitemvalues[index] = intitemvalues[inpus];
+                intitemvalues[inpus] = t;
                 index = -1;
             }
 
@@ -179,24 +183,97 @@ public class test : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// 장비를 교체합니다
+    /// </summary>
+    public void EquipItem(int index)
+    {
+        
+        ItemClass t = equippedItems[(int)EnumOfType.head];
+
+        // t = a;
+        // a = b;
+        switch (itemClasses[index].itemOfType)
+        {
+            case EnumOfType.head:
+                t = equippedItems[(int)EnumOfType.head];
+                equippedItems[(int)EnumOfType.head] = itemClasses[index];
+                break;
+            case EnumOfType.body:
+                t = equippedItems[(int)EnumOfType.body];
+                equippedItems[(int)EnumOfType.body] = itemClasses[index];
+                break;
+            case EnumOfType.leg:
+                t = equippedItems[(int)EnumOfType.leg];
+                equippedItems[(int)EnumOfType.leg] = itemClasses[index];
+                break;
+            case EnumOfType.foot:
+                t = equippedItems[(int)EnumOfType.foot];
+                equippedItems[(int)EnumOfType.foot] = itemClasses[index];
+                break;
+
+            default:
+                t = equippedItems[(int)EnumOfType.head];
+                equippedItems[(int)EnumOfType.head] = itemClasses[index];
+                break;
+        }
+
+        // b = t;
+        itemClasses[index] = t;
+
+
+
+
+
+
+    }
 }
 
 public class ItemClass
 {
-    /// <summary>
-    /// 아이템 이름
-    /// </summary>
-    public string stringItemName;
 
-    public float hp;
-    public float mp;
-
-
-    public ItemClass(string input1, float input2, float input3)
+    public enum HandType
     {
-        stringItemName = input1;
-        hp = input2;
-        mp = input3;
+        OneHanded, TwoHanded
+    }// 한손/양손 구분
+    public enum EnumOfType
+    {
+        head, body, leg, foot
+    }// 장비창 구분 
+
+    public EnumOfType itemOfType;
+
+    public enum AttackType
+    {
+        Melee , Range , Magic
+    }//공격 유형 분류
+
+    public bool AutoReuseType;
+    
+
+    public float ItemID;
+    public string stringItemName;
+    public float ItemLevel;
+    public AttackType DamageType;
+    public HandType BoolTwoHand;
+    public bool AutoReuse;
+    public float atkPoint;
+    public float atkSpeed;
+
+
+
+    public ItemClass(float input1, string input2, float input3, AttackType input4, HandType  input5, bool input6, float input7, float input8, EnumOfType input9 = EnumOfType.head)
+    {
+        ItemID = input1;
+        stringItemName = input2;
+        ItemLevel = input3;
+        DamageType = input4;
+        BoolTwoHand = input5;   
+        AutoReuse = input6;
+        atkPoint = input7;
+        atkSpeed = input8;
+        itemOfType = input9;
     }
 
     ~ItemClass()
@@ -209,3 +286,4 @@ enum enumItemType
 {
     Head, Ring, Weapon
 }
+
