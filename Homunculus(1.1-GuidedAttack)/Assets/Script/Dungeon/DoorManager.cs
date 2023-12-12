@@ -12,6 +12,7 @@ public class DoorManager : MonoBehaviour
     GameObject[] wall;
     GameObject[] closedDoor;
     GameObject[] door;
+    GameObject[] openedDoor;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class DoorManager : MonoBehaviour
         wall = new GameObject[4];
         closedDoor = new GameObject[4];
         door = new GameObject[4];
+        openedDoor = new GameObject[4];
         InitGameObjects();
     }
 
@@ -37,12 +39,14 @@ public class DoorManager : MonoBehaviour
         string[] wallNames = { "East Wall", "West Wall", "South Wall", "North Wall" };
         string[] doorNames = { "East Door", "West Door", "South Door", "North Door" };
         string[] closedDoorNames = { "Closed East Door", "Closed West Door", "Closed South Door", "Closed North Door" };
+        string[] openedDoorNames = { "Opened East Door", "Opened West Door", "Opened South Door", "Opened North Door" };
 
         for (int i = 0; i < 4; i++)
         {
             wall[i] = transform.Find(wallNames[i]).gameObject;
             door[i] = transform.Find(doorNames[i]).gameObject;
             closedDoor[i] = transform.Find(closedDoorNames[i]).gameObject;
+            openedDoor[i] = transform.Find(openedDoorNames[i]).gameObject;
         }
     }
 
@@ -110,7 +114,9 @@ public class DoorManager : MonoBehaviour
             if (closedDoor[i].activeSelf == false) continue;
             closedDoor[i].SetActive(false);
             door[i].SetActive(true);
+            openedDoor[i].SetActive(true);
         }
+        
         isClearedRoom = true;
     }
 

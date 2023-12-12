@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DungeonDoor : MonoBehaviour
 {
-    private bool isInDoorArea;
+    //private bool isInDoorArea; // 해당 변수는 사용되지 않음, 아래 수정사항 참고
     float maxRayDistance;
     PlayerController playerController;
     DoorManager roomScanner;
@@ -13,7 +13,7 @@ public class DungeonDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isInDoorArea = false;
+        //isInDoorArea = false;
         maxRayDistance = 70f;
         roomScanner = GetComponentInParent<DoorManager>();
     }
@@ -21,12 +21,12 @@ public class DungeonDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInDoorArea && Input.GetKeyDown(KeyCode.F))
+        /*if (isInDoorArea && Input.GetKeyDown(KeyCode.F))
         {
             if(isEnemyInTheRoom() == true || playerController == null) return;
 
             StartCoroutine(playerController.TeleportInDungeon(getNextRoomPos()));
-        }
+        }  던전 간의 이동 시에 화면이 버벅이는 문제 때문에 해당 코드를 OnTriggerEnter2D에 옮겼음 */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +34,12 @@ public class DungeonDoor : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerController = collision.GetComponent<PlayerController>();
-            isInDoorArea = true;
+            //isInDoorArea = true;
+
+            // 여기서부터 Update에서 옮긴 코드
+            if (isEnemyInTheRoom() == true || playerController == null) return;
+
+            StartCoroutine(playerController.TeleportInDungeon(getNextRoomPos()));
         }
     }
 
@@ -42,7 +47,7 @@ public class DungeonDoor : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            isInDoorArea = false;
+            //isInDoorArea = false;
         }
     }
 
@@ -61,7 +66,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData = Physics2D.Raycast(new Vector2(transform.position.x + 10f, transform.position.y), transform.right, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.collider.gameObject.transform.Find("West Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x + 1f, nextRoomPos.y);
+            nextRoomPos = new Vector2(nextRoomPos.x + 2.5f, nextRoomPos.y);
             return nextRoomPos;
         }
 
@@ -69,7 +74,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData = Physics2D.Raycast(new Vector2(transform.position.x - 10f, transform.position.y), -1*transform.right, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.collider.gameObject.transform.Find("East Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x - 1, nextRoomPos.y);
+            nextRoomPos = new Vector2(nextRoomPos.x - 2.5f, nextRoomPos.y);
             return nextRoomPos;
         }
 
@@ -77,7 +82,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 10f), -1*transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.transform.Find("North Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y - 1);
+            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y - 2.5f);
             return nextRoomPos;
         }
 
@@ -85,7 +90,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData =  Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 10f), transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.transform.Find("South Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y + 1);
+            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y + 2.5f);
             return nextRoomPos;
         }
     }
