@@ -63239,9 +63239,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44553390ca7f5bc42b4753fbcba441d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomNums: 1
+  roomNums: 7
   gameObjectRoom:
   - {fileID: 1114989160}
+  - {fileID: 1841860866}
+  - {fileID: 171757256}
+  - {fileID: 1814000889}
+  - {fileID: 1691755194}
+  - {fileID: 190428895}
+  - {fileID: 146098585}
   entrace: {fileID: 1114989160}
 --- !u!4 &951025938
 Transform:
