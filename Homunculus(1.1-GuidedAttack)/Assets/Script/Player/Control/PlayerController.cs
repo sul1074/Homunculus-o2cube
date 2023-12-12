@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -174,7 +175,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void RotateWeapon(Vector2 dir) { weaponParent.PointerPosition = dir; }
+    private void RotateWeapon(Vector2 dir)
+    {
+        if (weaponParent == null) return;
+        weaponParent.PointerPosition = dir;
+    }
     private void FlipPlayerAndAttackRangeTowardsMouse(Vector2 dir)
     {
         // 플레이어의 현재 위치에서 마우스 포인터의 위치를 향하는 벡터를 계산
@@ -227,6 +232,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Npc")
         {
             interactingNPC = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Exit Door" && Input.GetKey(KeyCode.F))
+        {
+            SceneManager.LoadScene("TalkDemo");
         }
     }
 

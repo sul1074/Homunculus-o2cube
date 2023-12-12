@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
     public PlayerStatus playerStatus;
 
     public Image[] UIHealth;
-    public Text UIPoint;
-    public Text UIStage;
     public GameObject RestartButton;
     public Slider hpSlider;
     public Slider mpSlider;
@@ -55,7 +53,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UIPoint.text = (totalPoint + stagePoint).ToString();
+
     }
 
     public void NextStage()
@@ -66,8 +64,6 @@ public class GameManager : MonoBehaviour
             stageIndex++;
             Stages[stageIndex].SetActive(true);
             PlayerReposition();
-
-            UIStage.text = "Stage" + (stageIndex + 1);
         }
         else
         {

@@ -18,8 +18,9 @@ public class TalkManager : MonoBehaviour
 
     void GenerateData()
     {
-        talkData.Add(1, new string[] { "안녕 개구리" });
-        talkData.Add(1000, new string[] { "안녕 인간아:0", "(얼음이 깨지는듯한 소리가 난다.):0" });
+        
+        talkData.Add(1000, new string[] { "어서오게, 호문 \n던전에 들어가고 싶은가?:0", "그럼 보내주도록 하지:0" });
+        talkData.Add(1, new string[] { "네" });
 
         portraitData.Add(1000 + 0, portraitArr[0]);
     }

@@ -90,7 +90,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData =  Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 10f), transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.transform.Find("South Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y + 2.5f);
+            nextRoomPos = new Vector2(nextRoomPos.x + 2f, nextRoomPos.y + 2.5f);
             return nextRoomPos;
         }
     }

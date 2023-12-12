@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TalkPrinter : MonoBehaviour
 {
@@ -59,6 +60,10 @@ public class TalkPrinter : MonoBehaviour
             isTalking = false;
             talkIndex = 0;
             playerTalking = true;
+
+            
+            SceneManager.LoadScene("Dungeon Generation");
+
             return;
         }
 
