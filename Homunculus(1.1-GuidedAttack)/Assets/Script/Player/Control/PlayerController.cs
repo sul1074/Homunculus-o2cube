@@ -75,7 +75,9 @@ public class PlayerController : MonoBehaviour
         Vector2 moveDir;
         float horizontalInput = talkPrinter.isTalking ? 0 : Input.GetAxis("Horizontal");
 
-        if (horizontalInput != 0)
+        //if (horizontalInput != 0)
+        // 레이를 쏴서 'Platform'이 앞에 있으면 이동하지 못함
+        if (horizontalInput < 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -1 * transform.right, 0.4625f, LayerMask.GetMask("Platform"))) || horizontalInput > 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.right, 0.4625f, LayerMask.GetMask("Platform"))))
         {
             moveDir = new Vector2(horizontalInput, 0);
 
