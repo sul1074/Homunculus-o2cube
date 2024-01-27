@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class EngravingButton : MonoBehaviour
 {
@@ -16,10 +17,16 @@ public class EngravingButton : MonoBehaviour
 
     public float hpStatus;
 
+    private float AlphaThreshold;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        AlphaThreshold = 0.1f;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+
+
         image = GetComponent<Image>();
 
         numOfChild = child.Length;
@@ -36,6 +43,11 @@ public class EngravingButton : MonoBehaviour
     {
         CheckActable();
 
+        ChangeColor();
+    }
+
+    private void ChangeColor()
+    {
         if (actived == true)
         {
             image.color = new Color(1, 1, 1, 1);

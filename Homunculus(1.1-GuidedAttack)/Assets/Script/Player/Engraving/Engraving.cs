@@ -5,7 +5,7 @@ using UnityEngine;
 public class Engraving : MonoBehaviour
 {
     private bool visible;
-    private GameObject EngravingPanel;
+    public GameObject EngravingPanel;
 
     private int numOfButtons;
     public EngravingButton[] Buttons;
@@ -17,7 +17,6 @@ public class Engraving : MonoBehaviour
     void Start()
     {
         visible = false;
-        EngravingPanel = transform.Find("Panel").gameObject;
         numOfButtons = Buttons.Length;
 
         tatalMaxHp = 0;
