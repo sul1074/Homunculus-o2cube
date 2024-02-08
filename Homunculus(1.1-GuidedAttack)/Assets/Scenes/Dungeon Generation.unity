@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 16387084}
   - component: {fileID: 16387083}
   - component: {fileID: 16387082}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,8 +340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.275008, y: 0}
+  m_SizeDelta: {x: 2.549984, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19135065
 MonoBehaviour:
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &19135066
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -414,6 +414,7 @@ RectTransform:
   - {fileID: 2083938439}
   - {fileID: 2015544906}
   - {fileID: 818000851}
+  - {fileID: 681414534}
   m_Father: {fileID: 1408790011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -570,7 +571,7 @@ GameObject:
   - component: {fileID: 42352926}
   - component: {fileID: 42352925}
   - component: {fileID: 42352924}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,8 +898,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.664978, y: 0}
+  m_SizeDelta: {x: 1.3300414, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69286682
 MonoBehaviour:
@@ -929,7 +930,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &69286683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -973,7 +974,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89118413
 MonoBehaviour:
@@ -1002,13 +1003,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 4 \uC99D\uAC00"
+  m_Text: " \uCD5C\uB300 \uB9C8\uB825 3 \uC99D\uAC00\n Cost : 4"
 --- !u!222 &89118414
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1872,7 +1873,7 @@ GameObject:
   - component: {fileID: 195045847}
   - component: {fileID: 195045846}
   - component: {fileID: 195045845}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2143,7 @@ GameObject:
   - component: {fileID: 209898464}
   - component: {fileID: 209898463}
   - component: {fileID: 209898462}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2325,7 +2326,7 @@ GameObject:
   - component: {fileID: 220332508}
   - component: {fileID: 220332507}
   - component: {fileID: 220332506}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13922,7 +13923,7 @@ GameObject:
   - component: {fileID: 306817948}
   - component: {fileID: 306817947}
   - component: {fileID: 306817946}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14302,7 +14303,7 @@ GameObject:
   - component: {fileID: 321647666}
   - component: {fileID: 321647665}
   - component: {fileID: 321647664}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14515,7 +14516,7 @@ GameObject:
   - component: {fileID: 330826324}
   - component: {fileID: 330826323}
   - component: {fileID: 330826322}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14699,7 +14700,7 @@ GameObject:
   - component: {fileID: 336749491}
   - component: {fileID: 336749490}
   - component: {fileID: 336749489}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22085,7 +22086,7 @@ GameObject:
   - component: {fileID: 353607270}
   - component: {fileID: 353607269}
   - component: {fileID: 353607272}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22688,11 +22689,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engravingSystem: {fileID: 1408790007}
   parent: {fileID: 1898153129}
-  child: []
+  child:
+  - {fileID: 717146698}
   text: {fileID: 1539669028}
   actived: 0
   actable: 0
-  hpStatus: 4
+  cost: 4
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 3
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!114 &389689475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23392,7 +23404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: maxHp +6
+  m_Text: "\uACF5\uC18D +7"
 --- !u!222 &461224624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23602,7 +23614,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478652866
 MonoBehaviour:
@@ -23631,13 +23643,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 6 \uC99D\uAC00"
+  m_Text: " \uACF5\uACA9 \uC18D\uB3C4 7 \uC99D\uAC00\n Cost : 6"
 --- !u!222 &478652867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23659,7 +23671,7 @@ GameObject:
   - component: {fileID: 497443865}
   - component: {fileID: 497443864}
   - component: {fileID: 497443863}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23853,7 +23865,7 @@ GameObject:
   - component: {fileID: 499797293}
   - component: {fileID: 499797295}
   - component: {fileID: 499797294}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Opened East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24450,6 +24462,7 @@ RectTransform:
   m_LocalScale: {x: 1.052, y: 1, z: 1}
   m_Children:
   - {fileID: 1439473790}
+  - {fileID: 1808603287}
   m_Father: {fileID: 90661646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24470,7 +24483,7 @@ GameObject:
   - component: {fileID: 529528221}
   - component: {fileID: 529528220}
   - component: {fileID: 529528219}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24662,7 +24675,7 @@ GameObject:
   - component: {fileID: 558402288}
   - component: {fileID: 558402287}
   - component: {fileID: 558402286}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24943,7 +24956,7 @@ GameObject:
   - component: {fileID: 564567167}
   - component: {fileID: 564567166}
   - component: {fileID: 564567165}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31112,7 +31125,7 @@ GameObject:
   - component: {fileID: 600324966}
   - component: {fileID: 600324965}
   - component: {fileID: 600324964}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31318,7 +31331,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606147971
 MonoBehaviour:
@@ -31347,13 +31360,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 5 \uC99D\uAC00"
+  m_Text: " \uC774\uB3D9\uC18D\uB3C4 2 \uC99D\uAC00\n Cost : 5"
 --- !u!222 &606147972
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37052,7 +37065,7 @@ GameObject:
   - component: {fileID: 643145383}
   - component: {fileID: 643145382}
   - component: {fileID: 643145381}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37236,7 +37249,7 @@ GameObject:
   - component: {fileID: 644331781}
   - component: {fileID: 644331780}
   - component: {fileID: 644331779}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37674,6 +37687,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105c5bcad928b944f900aec733b42e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &662633145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 662633146}
+  - component: {fileID: 662633148}
+  - component: {fileID: 662633147}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &662633146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662633145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734517748}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.3765, y: 0}
+  m_SizeDelta: {x: 501.178, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &662633147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662633145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 97fa57793387f2b49ad3c194d11446d5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &662633148
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662633145}
+  m_CullTransparentMesh: 1
 --- !u!4 &668973845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7928029281819647579, guid: 03932dd2ca5b6bb4fbe7a207acf515a9, type: 3}
@@ -48522,6 +48610,85 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &681414531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681414534}
+  - component: {fileID: 681414533}
+  - component: {fileID: 681414532}
+  m_Layer: 5
+  m_Name: Cost Taxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &681414532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681414531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 70
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Cost : '
+--- !u!222 &681414533
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681414531}
+  m_CullTransparentMesh: 1
+--- !u!224 &681414534
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681414531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 22745027}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 380, y: 80}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &689133429
 GameObject:
   m_ObjectHideFlags: 0
@@ -48932,7 +49099,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 420, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &702850924
 MonoBehaviour:
@@ -48961,13 +49128,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 7 \uC99D\uAC00"
+  m_Text: "\uD06C\uB9AC\uD2F0\uCEEC \uB370\uBBF8\uC9C0 10% \uC99D\uAC00\nCost : 7"
 --- !u!222 &702850925
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48988,7 +49155,7 @@ GameObject:
   - component: {fileID: 710296995}
   - component: {fileID: 710296994}
   - component: {fileID: 710296993}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49399,7 +49566,17 @@ MonoBehaviour:
   text: {fileID: 461224623}
   actived: 0
   actable: 0
-  hpStatus: 6
+  cost: 6
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 7
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!114 &717146699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56655,7 +56832,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -450, y: -70}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &743134955
 MonoBehaviour:
@@ -57030,7 +57207,7 @@ GameObject:
   - component: {fileID: 762228247}
   - component: {fileID: 762228246}
   - component: {fileID: 762228245}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57213,7 +57390,7 @@ GameObject:
   - component: {fileID: 762260404}
   - component: {fileID: 762260403}
   - component: {fileID: 762260402}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57397,7 +57574,7 @@ GameObject:
   - component: {fileID: 762890902}
   - component: {fileID: 762890901}
   - component: {fileID: 762890900}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57635,7 +57812,7 @@ GameObject:
   - component: {fileID: 818628270}
   - component: {fileID: 818628269}
   - component: {fileID: 818628268}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57830,7 +58007,7 @@ GameObject:
   - component: {fileID: 818947718}
   - component: {fileID: 818947717}
   - component: {fileID: 818947716}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58036,7 +58213,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -695.7001, y: -432}
+  m_AnchoredPosition: {x: -695.7001, y: -415}
   m_SizeDelta: {x: 458.5689, y: 74.4621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824992823
@@ -58127,7 +58304,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: 180}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &825431581
 MonoBehaviour:
@@ -63581,7 +63758,7 @@ GameObject:
   - component: {fileID: 838779867}
   - component: {fileID: 838779866}
   - component: {fileID: 838779865}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64691,7 +64868,17 @@ MonoBehaviour:
   text: {fileID: 501884127}
   actived: 0
   actable: 0
-  hpStatus: 1
+  cost: 1
+  maxHp: 1
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!114 &923219437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65645,7 +65832,7 @@ GameObject:
   - component: {fileID: 965134022}
   - component: {fileID: 965134021}
   - component: {fileID: 965134020}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65840,7 +66027,7 @@ GameObject:
   - component: {fileID: 983238489}
   - component: {fileID: 983238488}
   - component: {fileID: 983238487}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66341,7 +66528,7 @@ GameObject:
   - component: {fileID: 998466029}
   - component: {fileID: 998466028}
   - component: {fileID: 998466027}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66561,7 +66748,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: -70}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1008482558
 MonoBehaviour:
@@ -66625,7 +66812,7 @@ GameObject:
   - component: {fileID: 1014030919}
   - component: {fileID: 1014030918}
   - component: {fileID: 1014030917}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67001,7 +67188,17 @@ MonoBehaviour:
   text: {fileID: 1933821339}
   actived: 0
   actable: 0
-  hpStatus: 3
+  cost: 3
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!224 &1030409885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -67161,6 +67358,81 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1030439659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030439660}
+  - component: {fileID: 1030439662}
+  - component: {fileID: 1030439661}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1030439660
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030439659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1878609622}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.800018, y: 0}
+  m_SizeDelta: {x: 501.178, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1030439661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030439659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 97fa57793387f2b49ad3c194d11446d5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1030439662
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030439659}
+  m_CullTransparentMesh: 1
 --- !u!1 &1040085809
 GameObject:
   m_ObjectHideFlags: 0
@@ -67174,7 +67446,7 @@ GameObject:
   - component: {fileID: 1040085813}
   - component: {fileID: 1040085812}
   - component: {fileID: 1040085811}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67388,7 +67660,7 @@ GameObject:
   - component: {fileID: 1069755455}
   - component: {fileID: 1069755454}
   - component: {fileID: 1069755453}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67776,7 +68048,17 @@ MonoBehaviour:
   text: {fileID: 1464178811}
   actived: 0
   actable: 0
-  hpStatus: 7
+  cost: 7
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 10
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!224 &1073851454
 RectTransform:
   m_ObjectHideFlags: 0
@@ -76230,7 +76512,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091484438
 MonoBehaviour:
@@ -76259,13 +76541,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 1 \uC99D\uAC00"
+  m_Text: " \uCD5C\uB300 \uCCB4\uB825 1 \uC99D\uAC00\n Cost : 1"
 --- !u!222 &1091484439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -76291,7 +76573,7 @@ GameObject:
   - component: {fileID: 1100018404}
   - component: {fileID: 1100018403}
   - component: {fileID: 1100018402}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76474,7 +76756,7 @@ GameObject:
   - component: {fileID: 1112927102}
   - component: {fileID: 1112927101}
   - component: {fileID: 1112927100}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76679,8 +76961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.44999695, y: 0}
+  m_SizeDelta: {x: 0.8999926, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113406151
 MonoBehaviour:
@@ -76711,7 +76993,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &1113406152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -76917,7 +77199,7 @@ GameObject:
   - component: {fileID: 1125261094}
   - component: {fileID: 1125261093}
   - component: {fileID: 1125261092}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77112,7 +77394,7 @@ GameObject:
   - component: {fileID: 1128538865}
   - component: {fileID: 1128538864}
   - component: {fileID: 1128538863}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77595,7 +77877,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: maxHp +5
+  m_Text: "\uC774\uB3D9\uC18D\uB3C4 +2"
 --- !u!222 &1148565032
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77617,7 +77899,7 @@ GameObject:
   - component: {fileID: 1154799434}
   - component: {fileID: 1154799433}
   - component: {fileID: 1154799432}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86416,7 +86698,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -86452,15 +86734,19 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: bdb5e7e99f14181428c518e431bdff1e, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: a50e835a1f558334388fd28159d4e626, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 3
     m_Data: {fileID: 2203797919881089718, guid: 1329fbf92c5b5574d9a34f19d1a32580, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 8673527630790295319, guid: 1329fbf92c5b5574d9a34f19d1a32580, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 8854592227059702305, guid: 1329fbf92c5b5574d9a34f19d1a32580, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -224872910991652484, guid: 1329fbf92c5b5574d9a34f19d1a32580, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 8673527630790295319, guid: 1329fbf92c5b5574d9a34f19d1a32580, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 8
     m_Data:
@@ -86558,7 +86844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.15949917, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -86573,7 +86859,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &1230798635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -86652,7 +86938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: maxHp +2
+  m_Text: "\uD06C\uD655 +5%"
 --- !u!222 &1231024589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -87128,7 +87414,7 @@ GameObject:
   - component: {fileID: 1259317683}
   - component: {fileID: 1259317682}
   - component: {fileID: 1259317681}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102364,7 +102650,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 350, y: -320}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 420, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1275355615
 MonoBehaviour:
@@ -102429,7 +102715,7 @@ GameObject:
   - component: {fileID: 1278238671}
   - component: {fileID: 1278238670}
   - component: {fileID: 1278238669}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102643,7 +102929,7 @@ GameObject:
   - component: {fileID: 1279011568}
   - component: {fileID: 1279011567}
   - component: {fileID: 1279011566}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103089,7 +103375,7 @@ GameObject:
   - component: {fileID: 1326283948}
   - component: {fileID: 1326283947}
   - component: {fileID: 1326283946}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103398,11 +103684,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engravingSystem: {fileID: 1408790007}
   parent: {fileID: 1898153129}
-  child: []
+  child:
+  - {fileID: 1073851453}
   text: {fileID: 1148565031}
   actived: 0
   actable: 0
-  hpStatus: 5
+  cost: 5
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 0
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 2
 --- !u!114 &1364215251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104050,7 +104347,7 @@ GameObject:
   - component: {fileID: 1394933807}
   - component: {fileID: 1394933806}
   - component: {fileID: 1394933805}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104338,7 +104635,7 @@ GameObject:
   - component: {fileID: 1406370772}
   - component: {fileID: 1406370771}
   - component: {fileID: 1406370770}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: East Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104550,6 +104847,8 @@ MonoBehaviour:
   - {fileID: 1364215250}
   - {fileID: 717146698}
   - {fileID: 1073851453}
+  cost: 26
+  costText: {fileID: 681414532}
 --- !u!114 &1408790008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111856,7 +112155,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 365, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416198873
 MonoBehaviour:
@@ -111885,13 +112184,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 2 \uC99D\uAC00"
+  m_Text: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960 5% \uC99D\uAC00\nCost : 2"
 --- !u!222 &1416198874
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -112297,7 +112596,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &1439473792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -112318,7 +112617,7 @@ GameObject:
   - component: {fileID: 1445394233}
   - component: {fileID: 1445394232}
   - component: {fileID: 1445394231}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: South Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112519,7 +112818,7 @@ GameObject:
   - component: {fileID: 1450440451}
   - component: {fileID: 1450440450}
   - component: {fileID: 1450440449}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112702,7 +113001,7 @@ GameObject:
   - component: {fileID: 1455686354}
   - component: {fileID: 1455686353}
   - component: {fileID: 1455686352}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113237,7 +113536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: maxHp +7
+  m_Text: "\uD06C\uB380 +10%"
 --- !u!222 &1464178812
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -113277,7 +113576,7 @@ GameObject:
   - component: {fileID: 1470732257}
   - component: {fileID: 1470732256}
   - component: {fileID: 1470732255}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114132,7 +114431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: maxHp +4
+  m_Text: maxMp +3
 --- !u!222 &1539669029
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -114152,7 +114451,7 @@ GameObject:
   - component: {fileID: 1540344428}
   - component: {fileID: 1540344430}
   - component: {fileID: 1540344429}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Opened West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114726,7 +115025,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586643528
 MonoBehaviour:
@@ -114755,13 +115054,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCD5C\uB300 \uCCB4\uB825 3 \uC99D\uAC00"
+  m_Text: " \uCD5C\uB300 \uCCB4\uB825 3 \uC99D\uAC00\n Cost : 3"
 --- !u!222 &1586643529
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -114783,7 +115082,7 @@ GameObject:
   - component: {fileID: 1600353984}
   - component: {fileID: 1600353983}
   - component: {fileID: 1600353982}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116422,6 +116721,7 @@ RectTransform:
   m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children:
   - {fileID: 1230798633}
+  - {fileID: 662633146}
   m_Father: {fileID: 824992822}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116481,7 +116781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -116496,7 +116796,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 64
 --- !u!222 &1737167125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -116542,7 +116842,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -50, y: -320}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1740886336
 MonoBehaviour:
@@ -116607,7 +116907,7 @@ GameObject:
   - component: {fileID: 1745069774}
   - component: {fileID: 1745069773}
   - component: {fileID: 1745069772}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed East Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116803,7 +117103,7 @@ GameObject:
   - component: {fileID: 1776382209}
   - component: {fileID: 1776382208}
   - component: {fileID: 1776382207}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117041,7 +117341,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -50, y: -70}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 365, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1784678878
 MonoBehaviour:
@@ -117092,6 +117392,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784678876}
+  m_CullTransparentMesh: 1
+--- !u!1 &1808603286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1808603287}
+  - component: {fileID: 1808603289}
+  - component: {fileID: 1808603288}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1808603287
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808603286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 511839520}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.899994, y: 0}
+  m_SizeDelta: {x: 501.178, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1808603288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808603286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 97fa57793387f2b49ad3c194d11446d5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1808603289
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808603286}
   m_CullTransparentMesh: 1
 --- !u!1 &1813240368
 GameObject:
@@ -117495,7 +117870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -695.7001, y: -382}
+  m_AnchoredPosition: {x: -695.7001, y: -339}
   m_SizeDelta: {x: 458.5689, y: 74.4621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855780893
@@ -117602,7 +117977,7 @@ GameObject:
   - component: {fileID: 1864600013}
   - component: {fileID: 1864600012}
   - component: {fileID: 1864600011}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: North Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126060,6 +126435,7 @@ RectTransform:
   m_LocalScale: {x: 1.05, y: 1, z: 1}
   m_Children:
   - {fileID: 1737167123}
+  - {fileID: 1030439660}
   m_Father: {fileID: 1855780892}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126224,7 +126600,17 @@ MonoBehaviour:
   text: {fileID: 1231024588}
   actived: 0
   actable: 0
-  hpStatus: 2
+  cost: 2
+  maxHp: 0
+  hpHealing: 0
+  maxMp: 0
+  mpHealing: 0
+  attackSpeed: 0
+  defenseStatus: 0
+  criticalPercent: 5
+  criticalDamage: 0
+  avoidPercent: 0
+  moveSpeed: 0
 --- !u!114 &1898153130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126282,7 +126668,7 @@ GameObject:
   - component: {fileID: 1920987969}
   - component: {fileID: 1920987968}
   - component: {fileID: 1920987967}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126620,7 +127006,7 @@ GameObject:
   - component: {fileID: 1934933551}
   - component: {fileID: 1934933550}
   - component: {fileID: 1934933549}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126815,7 +127201,7 @@ GameObject:
   - component: {fileID: 1949899453}
   - component: {fileID: 1949899452}
   - component: {fileID: 1949899451}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: West Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127411,7 +127797,7 @@ GameObject:
   - component: {fileID: 1971300217}
   - component: {fileID: 1971300216}
   - component: {fileID: 1971300215}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed West Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136065,7 +136451,7 @@ GameObject:
   - component: {fileID: 2011079392}
   - component: {fileID: 2011079391}
   - component: {fileID: 2011079390}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed South Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137390,7 +137776,7 @@ GameObject:
   - component: {fileID: 2117540788}
   - component: {fileID: 2117540787}
   - component: {fileID: 2117540786}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137610,7 +137996,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -50, y: 180}
-  m_SizeDelta: {x: 280, y: 70}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2126436369
 MonoBehaviour:
@@ -137675,7 +138061,7 @@ GameObject:
   - component: {fileID: 2128080216}
   - component: {fileID: 2128080215}
   - component: {fileID: 2128080214}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Closed North Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

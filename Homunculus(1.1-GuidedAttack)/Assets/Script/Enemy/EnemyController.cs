@@ -41,14 +41,17 @@ public class EnemyController : MonoBehaviour
 
         Vector2 frontVec = new Vector2(transform.position.x - (randomVelocity * 0.64f), transform.position.y);
         Debug.DrawRay(frontVec, Vector2.down * 2.0f, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down * 2f, 1, LayerMask.GetMask("Platform"));
-        RaycastHit2D anotherRayHit = Physics2D.Raycast(frontVec, Vector2.down * 2f, 1, LayerMask.GetMask("Wall"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector2.down, 2.0f, LayerMask.GetMask("Platform"));
+        RaycastHit2D anotherRayHit = Physics2D.Raycast(frontVec, Vector2.down, 2.0f, LayerMask.GetMask("Wall"));
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y + 0.1f), Vector2.left * randomVelocity, new Color(0, 0, 1));
         RaycastHit2D rayHit2 = Physics2D.Raycast(transform.position, Vector2.left * randomVelocity, 1.0f, LayerMask.GetMask("Platform"));
 
-        RaycastHit2D checkPlatform = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.64f), transform.position.y - 0.64f), Vector2.left * randomVelocity * (-1), 1.28f, LayerMask.GetMask("Wall"));
-        if (checkPlatform.collider != null && jumpTime < 1)
+        RaycastHit2D checkPlatform1 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.64f), transform.position.y - 0.64f), Vector2.left * randomVelocity * (-1), 1.28f, LayerMask.GetMask("Wall"));
+        RaycastHit2D checkPlatform2 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.64f), transform.position.y - 0.64f), Vector2.left * randomVelocity * (-1), 1.28f, LayerMask.GetMask("Platform"));
+        if ((checkPlatform1.collider != null || checkPlatform2.collider != null) && jumpTime < 1)
+        {
             jumpTime = 1;  // 점프 횟수 초기화
+        }
 
         if (rayHit2.collider != null && boxCollider.enabled != false && jumpTime > 0)//jump
         {

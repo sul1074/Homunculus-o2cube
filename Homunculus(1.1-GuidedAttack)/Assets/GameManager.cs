@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
         playerHpMax = playerStatus.getHpMax();
         playerMpMax = playerStatus.getMpMax();
         playerExpMax = playerStatus.getExpMax();
+        hpSlider.interactable = false;
+        mpSlider.interactable = false;
+        expSlider.interactable = false;
     }
 
     // Update is called once per frame
