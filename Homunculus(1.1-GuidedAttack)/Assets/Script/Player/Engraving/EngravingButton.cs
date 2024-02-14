@@ -15,7 +15,17 @@ public class EngravingButton : MonoBehaviour
     public bool actived;
     public bool actable;
 
-    public float hpStatus;
+    public int cost;
+    public float maxHp;
+    public float hpHealing;
+    public float maxMp;
+    public float mpHealing;
+    public float attackSpeed;
+    public float defenseStatus;
+    public float criticalPercent;
+    public float criticalDamage;
+    public float avoidPercent;
+    public float moveSpeed;
 
     private float AlphaThreshold;
 
@@ -69,14 +79,18 @@ public class EngravingButton : MonoBehaviour
     {
         if (actived == false && actable == true)
         {
+            if (engravingSystem.getCost() < this.cost) return;
+
             actived = true;
+            engravingSystem.subtractCost(this.cost);
         }
         else if (actived == true)
         {
             UnactivateChild();
         }
 
-        engravingSystem.setToTalMaxHp();
+        engravingSystem.setCostText();
+        engravingSystem.setTotalEngravingStatus();
     }
 
     private void CheckActable()
@@ -97,7 +111,12 @@ public class EngravingButton : MonoBehaviour
 
     private void UnactivateChild()
     {
-        this.actived = false;
+        if (this.actived)
+        {
+            this.actived = false;
+            engravingSystem.subtractCost(-this.cost);
+        }
+
         if (numOfChild > 0)
         {
             for (int i = 0; i < numOfChild; i++)

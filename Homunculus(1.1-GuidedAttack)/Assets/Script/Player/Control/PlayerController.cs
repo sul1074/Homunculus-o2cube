@@ -82,9 +82,12 @@ public class PlayerController : MonoBehaviour
         Vector2 moveDir;
         float horizontalInput = talkPrinter.isTalking ? 0 : Input.GetAxis("Horizontal");
 
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), -0.4625f * transform.right, new Color(1, 0, 0));
+
         //if (horizontalInput != 0)
-        // 레이를 쏴서 'Platform'이 앞에 있으면 이동하지 못함
-        if (horizontalInput < 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -1 * transform.right, 0.4625f, LayerMask.GetMask("Platform"))) || horizontalInput > 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.right, 0.4625f, LayerMask.GetMask("Platform"))))
+        // 레이를 쏴서 벽이 앞에 있으면 이동하지 못함
+        if ((horizontalInput < 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -1 * transform.right, 0.4625f, LayerMask.GetMask("Platform"))) && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), -1 * transform.right, 0.4625f, LayerMask.GetMask("Wall")))) 
+            || (horizontalInput > 0.0f && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.right, 0.4625f, LayerMask.GetMask("Platform"))) && !(Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.right, 0.4625f, LayerMask.GetMask("Wall")))))
         {
             moveDir = new Vector2(horizontalInput, 0);
 
@@ -100,18 +103,20 @@ public class PlayerController : MonoBehaviour
     {
         if (anim.GetBool("isDodging")) return;
 
+        float randomVelocity = spriteRenderer.flipX ? 1.0f : -1.0f;
+        RaycastHit2D checkPlatform1 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.4275f), transform.position.y - 0.52638f), Vector2.left * randomVelocity * (-1), 0.865f, LayerMask.GetMask("Wall"));
+        RaycastHit2D checkPlatform2 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.4275f), transform.position.y - 0.52638f), Vector2.left * randomVelocity * (-1), 0.865f, LayerMask.GetMask("Platform"));
+        if ((checkPlatform1.collider != null || checkPlatform2.collider != null) && jumpTime < 2)
+        {
+            anim.SetBool("isJumping", false);
+            jumpTime = 2;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && jumpTime > 0 && !talkPrinter.isTalking)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
             if (jumpTime > 0) jumpTime--;
-        }
-
-        // y축 속도와 가속도가 모두 0일 때 공중에 있는 상태가 아님으로 판정
-        if (rigid.velocity.y == 0 && rigid.velocity.y / Time.deltaTime == 0)
-        {
-            anim.SetBool("isJumping", false);
-            jumpTime = 2;
         }
     }
     void Attack()
