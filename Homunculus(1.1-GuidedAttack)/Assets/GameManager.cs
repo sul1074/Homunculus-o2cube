@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     public int totalPoint;
     public int stagePoint;
     public int stageIndex;
-    public int health;
 
+    public float playerHp;
     private float playerHpMax;
     private float playerMpMax;
     private float playerExpMax;
@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         totalPoint = 0;
         stagePoint = 0;
         stageIndex = 0;
-        health = 3;
         playerHpMax = playerStatus.getHpMax();
         playerMpMax = playerStatus.getMpMax();
         playerExpMax = playerStatus.getExpMax();
@@ -53,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        HealthBarOn();
     }
 
     public void NextStage()
@@ -81,11 +80,24 @@ public class GameManager : MonoBehaviour
     {
         float calculatedDamage = playerStatus.getHitDamage(hitDamage);
 
-        if (hpSlider.value - calculatedDamage / playerHpMax > 0) hpSlider.value -= calculatedDamage / playerHpMax;
+        if (playerHp - calculatedDamage > 0) playerHp -= calculatedDamage;
 
-        else {
-            hpSlider.value = 0;
-            playerController.OnDie(); 
+        else
+        {
+            playerHp = 0;
+            playerController.OnDie();
+        }
+    }
+
+    public void HealthUp(float regenPoint)
+    {
+        if (playerHp >= playerHpMax)
+        {
+            hpSlider.value = 1.0f;
+        }
+        else
+        {
+            playerHp += regenPoint;
         }
     }
 
@@ -105,7 +117,7 @@ public class GameManager : MonoBehaviour
         playerHpMax = playerStatus.getHpMax();
         playerMpMax = playerStatus.getMpMax();
         playerExpMax = playerStatus.getExpMax();
-        hpSlider.value = 1;
+        playerHp = playerHpMax;
         mpSlider.value = 1;
         expSlider.value = 0;
     }
@@ -129,10 +141,12 @@ public class GameManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            /*
             if(health > 1)
             {
                 PlayerReposition();
             }
+            */
 
             HealthDown(50.0f);
         }
@@ -148,5 +162,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
         Time.timeScale = 1;
+    }
+
+    private void HealthBarOn()
+    {
+        hpSlider.value = playerHp/playerHpMax;
     }
 }

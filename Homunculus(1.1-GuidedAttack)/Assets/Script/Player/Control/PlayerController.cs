@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float curTime;
     private float coolTime;
     private bool restrictMoving;
+    private float evasionPoint;
+    private float hpRegenPoint;
 
     private bool canDodge = true;
     private float dodgePower = 7.0f;
@@ -46,7 +48,12 @@ public class PlayerController : MonoBehaviour
         playerStatus = GetComponent<PlayerStatus>();
         weaponParent = GetComponentInChildren<WeaponParent>();
         gameManager.updateStatus();
+
         coolTime = playerStatus.getAtkSpeed();
+        evasionPoint = playerStatus.getEvasionPoint();
+        moveSpeed = playerStatus.getMoveSpeed();
+        hpRegenPoint = playerStatus.getHpRegen();
+
         playertalking = true;
     }
 
@@ -64,7 +71,7 @@ public class PlayerController : MonoBehaviour
         ChangeWeapon();
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDodge && !talkPrinter.isTalking) StartCoroutine(DodgeRoll());
         Talk();
-
+        hpRegen();
     }
 
     void SetPlayerImmortal() { gameObject.layer = 9; }
@@ -225,7 +232,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            OnDamaged(collision.transform.position);
+            OnDamaged(collision.transform.position, collision.gameObject);
         }
     }
 
@@ -260,16 +267,36 @@ public class PlayerController : MonoBehaviour
         rigid.AddForce(Vector2.up * 11, ForceMode2D.Impulse);
     }
 
-    void OnDamaged(Vector2 targetPos)
+    void OnDamaged(Vector2 targetPos,GameObject target)
     {
         gameObject.layer = 9;
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        gameManager.HealthDown(20.0f);
+        float enemyCritPoint = target.GetComponent<EnemyStatus>().critPoint;
+        float enemyCritAtk = target.GetComponent<EnemyStatus>().critAtk;
+        Debug.Log(target.GetComponent<EnemyStatus>().hpMax);
 
-        int physicDirection = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(physicDirection, 7), ForceMode2D.Impulse);
+        if (Random.Range(0.0f, 100.0f) <= evasionPoint)
+        {
+            Debug.Log("È¸ÇÇ!");
+        }
+        else
+        {
+            if (Random.Range(0.0f,100.0f) <= enemyCritPoint)
+            {
+                gameManager.HealthDown(target.GetComponent<EnemyStatus>().atkPoint*enemyCritAtk * 0.01f);
+                anim.SetTrigger("doDamaged");
+                int physicDirection = transform.position.x - targetPos.x > 0 ? 1 : -1;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(physicDirection * 3, 3), ForceMode2D.Impulse);
+            }
+            else
+            {
+                gameManager.HealthDown(target.GetComponent<EnemyStatus>().atkPoint);
+                anim.SetTrigger("doDamaged");
+                int physicDirection = transform.position.x - targetPos.x > 0 ? 1 : -1;
+                gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(physicDirection * 3, 3), ForceMode2D.Impulse);
+            }
+        }
 
-        anim.SetTrigger("doDamaged");
         Invoke("OffDamaged", 2);
     }
 
@@ -299,4 +326,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void expUp(float exp) { gameManager.adjustExp(exp); }
+
+    private void hpRegen()
+    {
+        gameManager.HealthUp(hpRegenPoint * Time.deltaTime);
+    }
 }

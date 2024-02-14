@@ -7,11 +7,19 @@ public class Attack : MonoBehaviour
     Animator anim;
     public Transform pos;
     public Vector2 boxSize;
+    GameObject player;
+    private PlayerStatus playerStatus;
+    private float critPoint;
+    private float critAtk;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.Find("Player");
+        playerStatus = player.GetComponent<PlayerStatus>();
+        critPoint = playerStatus.getCritPoint();
+        critAtk = playerStatus.getCritAtk();
     }
 
     // Update is called once per frame
@@ -21,7 +29,11 @@ public class Attack : MonoBehaviour
 
     public void DoAttack(float damage)
     {
-        if(true /* 현재 무기가 근접 공격일 경우(추후 추가)*/)
+        //크리티컬 데미지, 확률 가져옴
+        critPoint = playerStatus.getCritPoint();
+        critAtk = playerStatus.getCritAtk();
+
+        if (true /* 현재 무기가 근접 공격일 경우(추후 추가)*/)
         {
             anim.SetTrigger("Attack");
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
@@ -29,7 +41,15 @@ public class Attack : MonoBehaviour
             {
                 if (collider.tag == "Enemy")
                 {
-                    collider.GetComponent<EnemyController>().OnDamaged(damage);
+                    if (Random.Range(0.0f, 100.0f) <= critPoint)
+                    {
+                        collider.GetComponent<EnemyController>().OnDamaged(damage * critAtk * 0.01f);
+                        Debug.Log("Crit!");
+                    }
+                    else
+                    {
+                        collider.GetComponent<EnemyController>().OnDamaged(damage);
+                    }
                     break;
                 }
             }

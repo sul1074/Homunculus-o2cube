@@ -28,8 +28,6 @@ public class Enemy_atk : MonoBehaviour
         {
             
             // Debug.Log("Player find. Do attack.");
-
-            
             Attack();
         }
     }

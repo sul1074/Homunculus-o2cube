@@ -33,11 +33,12 @@ public class PlayerStatus : MonoBehaviour
     {
         lv = 1;
         exp = 0;
-        setAtkSpeed(1.0f);
-        setCritPoint(5.0f);
+        setAtkSpeed(0.3f);
+        setCritPoint(20.0f);
         setCritAtk(200.0f);
-        setMoveSpeed(3.0f);
+        setMoveSpeed(6.0f);
         updateStatusAffectedByLevel();
+        setEvasionPoint(20.0f);
     }
 
     // Update is called once per frame
@@ -74,7 +75,7 @@ public class PlayerStatus : MonoBehaviour
     public float getHpMax() { return hpMax; }
     public void setCurrHp(float hp) { this.hp += hp; }
     public float getCurrHp() { return hp; }
-    public void updateHpRegen() { hpRegen = hpMax * 0.005f; }
+    public void updateHpRegen() { hpRegen = hpMax * 0.01f; }
     public void adjustHpRegen(float hpRegen) { this.hpRegen += hpRegen; }
     public float getHpRegen() { return hpRegen; }
     public void updateMpMax() { mpMax = 20.0f + (float)(lv * 4); }

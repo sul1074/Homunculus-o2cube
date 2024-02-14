@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
     int randomVelocity;
-    private int hpMax = 25;
-    public Slider hp;
+    private float hpMax = 25;
+    public Slider hpBar;
     Rigidbody2D rigid;
     Animator anim;
     SpriteRenderer spriteRenderer;
@@ -15,6 +16,13 @@ public class EnemyController : MonoBehaviour
 
     static GameManager gameManager;
     public float moveSpeed = 1f;
+    float exp;
+    private float hp;
+    private float def;
+    private float evasion;
+    private float hpRegen;
+
+
     private int value = 0;
     private bool playerDetected = false;
     private Coroutine valueResetCoroutine;
@@ -31,6 +39,16 @@ public class EnemyController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         rigid = GetComponent<Rigidbody2D>();
         StartCoroutine(randomMove());
+
+        //스탯 받아오기
+        hpMax = GetComponent<EnemyStatus>().hpMax;
+        moveSpeed = GetComponent<EnemyStatus>().moveSpeed;
+        exp = GetComponent<EnemyStatus>().exp;
+        def = GetComponent<EnemyStatus>().defPoint;
+        evasion = GetComponent<EnemyStatus>().evasionPoint;
+        hpRegen = GetComponent<EnemyStatus>().hpRegen;
+
+        hp = hpMax;
     }
 
     // Update is called once per frame
@@ -79,7 +97,7 @@ public class EnemyController : MonoBehaviour
         {//if enemy find player
             if (rayHitf1.collider != null || rayHitf2.collider != null || rayHitf3.collider != null)
             {
-                moveSpeed = 2f;
+                //moveSpeed = 2f;
                 if (spriteRenderer.flipX == false)
                 {
                     switchvalue = 1;
@@ -122,7 +140,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             // Player not detected
-            moveSpeed = 1f;
+            //moveSpeed = 1f;
             switchvalue = 0;
             if (playerDetected)
             {
@@ -144,6 +162,10 @@ public class EnemyController : MonoBehaviour
             Turn();
         }
         if (randomVelocity != 0) spriteRenderer.flipX = randomVelocity != -1;
+
+        //체력 표기
+        hpBar.value = hp / hpMax;
+        hpRegenOvertime();
     }
 
     IEnumerator randomMove()
@@ -176,13 +198,17 @@ public class EnemyController : MonoBehaviour
 
     public bool OnDamaged(float playerAtkDamage)
     {
-        hp.value -= (playerAtkDamage / hpMax);
+        if (Random.Range(0.0f,100.0f) <= evasion)
+        {
+            return true;
+        }
+        hp -= playerAtkDamage - (playerAtkDamage * def * 0.01f);
         gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 3, ForceMode2D.Impulse);
 
-        if (hp.value <= 0)
+        if (hp <= 0)
         {
             die();
-            GameManager.globalGameManager.adjustExp(5.0f);
+            GameManager.globalGameManager.adjustExp(exp);
             return true;
         }
         else return false;
@@ -225,5 +251,18 @@ public class EnemyController : MonoBehaviour
     public void FixRandomVelocity(bool fix)
     {
         isRandomVelocityFixed = fix;
+    }
+
+    void hpRegenOvertime()
+    {
+        if (hp < hpMax && hp > 0)
+        {
+            if (hp + hpRegen * Time.deltaTime > hpMax)
+            {
+                hp = hpMax;
+            }
+            else hp += hpRegen * Time.deltaTime;
+        }
+        return;
     }
 }
