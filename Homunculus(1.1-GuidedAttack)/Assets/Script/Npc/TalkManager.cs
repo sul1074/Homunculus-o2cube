@@ -20,9 +20,11 @@ public class TalkManager : MonoBehaviour
     {
         
         talkData.Add(1000, new string[] { "어서오게, 호문 \n던전에 들어가고 싶은가?:0", "그럼 보내주도록 하지:0" });
+        talkData.Add(1001, new string[] { "대화1:0" });
         talkData.Add(1, new string[] { "네" });
 
         portraitData.Add(1000 + 0, portraitArr[0]);
+        portraitData.Add(1001 + 0, portraitArr[1]);
     }
 
     public string GetTalk(int id, int talkIndex)

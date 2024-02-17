@@ -27,6 +27,9 @@ public class PlayerStatus : MonoBehaviour
     // evade & speed
     private float evasionPoint;
     private float moveSpeed;
+
+    public Engraving engraving;
+    public GameObject levelupText;
    
     // Start is called before the first frame update
     void Start()
@@ -44,7 +47,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     // setter & getter
@@ -63,10 +66,14 @@ public class PlayerStatus : MonoBehaviour
 
         // adjust status concered with level
         updateStatusAffectedByLevel();
+        engraving.subtractCost((-1) * (lv - 1));
+        engraving.setCostText();
 
         // restore Hp & Mp
         setCurrHp(getHpMax());
         setCurrHp(getMpMax());
+
+        levelupText.SetActive(true);
     }
 
     // hp

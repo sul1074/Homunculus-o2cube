@@ -23,8 +23,9 @@ public class RangedAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
     public void ChangeRangedWeapon()
     {
         for (int i = 0; i < weaponTypeNum; i++)
@@ -63,5 +64,10 @@ public class RangedAttack : MonoBehaviour
             ArcFire();
         else if (equipWeaponType[2] == true) // guided
             GuidedFire();
+    }
+
+    public void changePosition(float x)
+    {
+        transform.localPosition = new Vector3(0.48f * x, transform.localPosition.y, transform.localPosition.z);
     }
 }

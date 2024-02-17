@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponParent : MonoBehaviour
 {
+    public Attack attack;
     public SpriteRenderer weaponRenderer, playerRenderer;
     public Vector2 PointerPosition { get; set; }
 
@@ -16,8 +17,10 @@ public class WeaponParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!attack.gameObject.activeSelf) return;
+
         Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
-        rotateWeapon(direction);
+        //rotateWeapon(direction);
         flipWeaponTowardMousePointer(direction);
         adjustRenderingLayerOrderDependingWeaponAngle();
     }
@@ -26,19 +29,25 @@ public class WeaponParent : MonoBehaviour
 
     void flipWeaponTowardMousePointer(Vector2 direction)
     {
-        Vector2 scale = transform.localScale;
+        Vector2 pos = transform.localPosition;
 
         // 마우스가 왼쪽을 가리킬 때
         if (direction.x < 0)
         {
-            scale.y = -1;
+            pos.x = -0.29f;
+            transform.rotation = Quaternion.Euler(0, 0, 23.02f);
+            weaponRenderer.flipX = true;
+            attack.setDirection(false);
         }
         // 마우스가 오른쪽을 가리킬 때
         else if (direction.x > 0)
         {
-            scale.y = 1;
+            pos.x = 0.29f;
+            transform.rotation = Quaternion.Euler(0, 0, -23.02f);
+            weaponRenderer.flipX = false;
+            attack.setDirection(true);
         }
-        transform.localScale = scale;
+        transform.localPosition = pos;
     }
 
     void adjustRenderingLayerOrderDependingWeaponAngle()
