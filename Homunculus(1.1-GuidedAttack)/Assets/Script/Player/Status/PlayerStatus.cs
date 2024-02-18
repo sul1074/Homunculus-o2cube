@@ -85,9 +85,9 @@ public class PlayerStatus : MonoBehaviour
     public void updateHpRegen() { hpRegen = hpMax * 0.01f; }
     public void adjustHpRegen(float hpRegen) { this.hpRegen += hpRegen; }
     public float getHpRegen() { return hpRegen; }
-    public void updateMpMax() { mpMax = 20.0f + (float)(lv * 4); }
 
     // mp
+    public void updateMpMax() { mpMax = 20.0f + (float)(lv * 4); }
     public void adjustMpMax(float mp) { mpMax += mp; } 
     public float getMpMax() { return mpMax; }
     public void adjustMp(float mp) { this.mp += mp; }

@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 0c5a53a33b4dbf243a164101503d93cd
+guid: 0a70fa93262bfa24f96b63088ebfa7dc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7828015717892394128
-    second: enemy_atk_0
+      213: 8757098914875501893
+    second: die_0
   - first:
-      213: -4256263626550471717
-    second: enemy_atk_1
+      213: -6103215479232170835
+    second: die_1
   - first:
-      213: -7910250837560470062
-    second: enemy_atk_2
+      213: -5062548802251577173
+    second: die_2
   - first:
-      213: -1036946924529690582
-    second: enemy_atk_3
-  - first:
-      213: 4717282929663896610
-    second: enemy_atk_4
+      213: 2613213492379772746
+    second: die_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -47,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -61,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_atk_0
+      name: die_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 641
-        height: 640
+        x: 5
+        y: 1
+        width: 59
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07379dedd2d4d5390800000000000000
-      internalID: -7828015717892394128
+      spriteID: 54dec14e017778970800000000000000
+      internalID: 8757098914875501893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_atk_1
+      name: die_1
       rect:
         serializedVersion: 2
-        x: 668
-        y: 0
-        width: 614
-        height: 640
+        x: 68
+        y: 2
+        width: 60
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd31b0548c6bee4c0800000000000000
-      internalID: -4256263626550471717
+      spriteID: da473bc9bd50d4ba0800000000000000
+      internalID: -6103215479232170835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_atk_2
+      name: die_2
       rect:
         serializedVersion: 2
-        x: 1309
-        y: 0
-        width: 613
-        height: 640
+        x: 131
+        y: 2
+        width: 61
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d5d8f606c4293290800000000000000
-      internalID: -7910250837560470062
+      spriteID: ba827b7dfa63eb9b0800000000000000
+      internalID: -5062548802251577173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_atk_3
+      name: die_3
       rect:
         serializedVersion: 2
-        x: 1948
-        y: 0
-        width: 554
-        height: 640
+        x: 195
+        y: 1
+        width: 61
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,29 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a28597024460c91f0800000000000000
-      internalID: -1036946924529690582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_atk_4
-      rect:
-        serializedVersion: 2
-        x: 2588
-        y: 0
-        width: 612
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22c61afc4d7277140800000000000000
-      internalID: 4717282929663896610
+      spriteID: a47ed8f63dff34420800000000000000
+      internalID: 2613213492379772746
       vertices: []
       indices: 
       edges: []

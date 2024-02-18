@@ -8,6 +8,8 @@ public class WeaponParent : MonoBehaviour
     public SpriteRenderer weaponRenderer, playerRenderer;
     public Vector2 PointerPosition { get; set; }
 
+    public Transform playerPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class WeaponParent : MonoBehaviour
     {
         if (!attack.gameObject.activeSelf) return;
 
-        Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (PointerPosition - (Vector2)playerPos.position);
         //rotateWeapon(direction);
         flipWeaponTowardMousePointer(direction);
         adjustRenderingLayerOrderDependingWeaponAngle();

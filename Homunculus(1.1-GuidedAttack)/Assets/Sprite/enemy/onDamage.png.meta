@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 0948053f39f22bf4cbe9064028dfa3d4
+guid: 024ed0627b1cccf469e279089e1145ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6568381017807469242
-    second: enemy_walk_0
+      213: 9222581056892705008
+    second: onDamage_0
   - first:
-      213: -7724142208158362519
-    second: enemy_walk_1
+      213: 1967776079998682755
+    second: onDamage_1
   - first:
-      213: 6291463294519083085
-    second: enemy_walk_2
+      213: -1907059420762445002
+    second: onDamage_2
   - first:
-      213: -5716283468139608365
-    second: enemy_walk_3
-  - first:
-      213: 8394457189932444214
-    second: enemy_walk_4
+      213: 4533774904672537539
+    second: onDamage_3
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -47,7 +44,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -61,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_walk_0
+      name: onDamage_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 641
-        height: 640
+        x: 5
+        y: 1
+        width: 59
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 645ca2cd34c68d4a0800000000000000
-      internalID: -6568381017807469242
+      spriteID: 0f81650ab903dff70800000000000000
+      internalID: 9222581056892705008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_1
+      name: onDamage_1
       rect:
         serializedVersion: 2
-        x: 668
-        y: 0
-        width: 614
-        height: 640
+        x: 67
+        y: 3
+        width: 61
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9649e1006955ec490800000000000000
-      internalID: -7724142208158362519
+      spriteID: 38605d54be1fe4b10800000000000000
+      internalID: 1967776079998682755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_2
+      name: onDamage_2
       rect:
         serializedVersion: 2
-        x: 1298
-        y: 0
-        width: 614
-        height: 640
+        x: 129
+        y: 2
+        width: 62
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4008336884cf4750800000000000000
-      internalID: 6291463294519083085
+      spriteID: 63b64e39f83c885e0800000000000000
+      internalID: -1907059420762445002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_walk_3
+      name: onDamage_3
       rect:
         serializedVersion: 2
-        x: 1948
-        y: 0
-        width: 614
-        height: 640
+        x: 194
+        y: 2
+        width: 62
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,29 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d6c91ec87eaba0b0800000000000000
-      internalID: -5716283468139608365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy_walk_4
-      rect:
-        serializedVersion: 2
-        x: 2588
-        y: 0
-        width: 612
-        height: 640
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63aa528a65a1f7470800000000000000
-      internalID: 8394457189932444214
+      spriteID: 3cb469c31443bee30800000000000000
+      internalID: 4533774904672537539
       vertices: []
       indices: 
       edges: []

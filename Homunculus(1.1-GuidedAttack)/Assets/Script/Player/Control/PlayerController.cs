@@ -96,7 +96,8 @@ public class PlayerController : MonoBehaviour
             moveDir = new Vector2(horizontalInput, 0);
 
             transform.Translate(moveDir * moveSpeed * Time.deltaTime);
-            anim.SetBool("isWalking", true);
+            if(!anim.GetBool("isJumping"))
+                anim.SetBool("isWalking", true);
         }
         else
         {
@@ -119,6 +120,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && jumpTime > 0 && !talkPrinter.isTalking)
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            anim.SetBool("isWalking", false);
             anim.SetBool("isJumping", true);
             if (jumpTime > 0) jumpTime--;
         }
@@ -348,6 +350,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator die()
     {
         isAlive = false;
+        myWeapon.SetActive(false);
         spriteRenderer.color = new Color(1, 1, 1, 1);
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;

@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     private float def;
     private float evasion;
     private float hpRegen;
+    private bool isAlive;
 
 
     private int value = 0;
@@ -34,6 +35,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isAlive = true;
+
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -96,73 +99,76 @@ public class EnemyController : MonoBehaviour
         RaycastHit2D rayHitb2 = Physics2D.Raycast(transup, Vector3.left * randomVelocity * (-1), raybackDistance, LayerMask.GetMask("Player"));
         RaycastHit2D rayHitb3 = Physics2D.Raycast(transdown, Vector3.left * randomVelocity * (-1), raybackDistance, LayerMask.GetMask("Player"));
 
-        if (rayHitf1.collider != null || rayHitf2.collider != null || rayHitf3.collider != null || rayHitb1.collider != null || rayHitb2.collider != null || rayHitb3.collider != null)
-        {//if enemy find player
-            if (rayHitf1.collider != null || rayHitf2.collider != null || rayHitf3.collider != null)
-            {
-                //moveSpeed = 2f;
-                if (spriteRenderer.flipX == false)
+        if (isAlive)
+        {
+            if (rayHitf1.collider != null || rayHitf2.collider != null || rayHitf3.collider != null || rayHitb1.collider != null || rayHitb2.collider != null || rayHitb3.collider != null)
+            {//if enemy find player
+                if (rayHitf1.collider != null || rayHitf2.collider != null || rayHitf3.collider != null)
                 {
-                    switchvalue = 1;
+                    //moveSpeed = 2f;
+                    if (spriteRenderer.flipX == false)
+                    {
+                        switchvalue = 1;
 
-                    if (!((Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Platform"))) || (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Wall")))))
-                        rigid.velocity = new Vector2(Mathf.Abs(randomVelocity) * moveSpeed, rigid.velocity.y);
+                        if (!((Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Platform"))) || (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Wall")))))
+                            rigid.velocity = new Vector2(Mathf.Abs(randomVelocity) * moveSpeed, rigid.velocity.y);
+                    }
+                    else if (spriteRenderer.flipX == true)
+                    {
+                        switchvalue = 2;
+
+                        if (!((Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Platform"))) || (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Wall")))))
+                            rigid.velocity = new Vector2(Mathf.Abs(randomVelocity) * moveSpeed * (-1), rigid.velocity.y);
+                    }
+
+                    //FixRandomVelocity(true);
                 }
-                else if (spriteRenderer.flipX == true)
+                else
                 {
-                    switchvalue = 2;
-
-                    if (!((Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Platform"))) || (Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.63f), Vector2.left * randomVelocity, 0.7f, LayerMask.GetMask("Wall")))))
-                        rigid.velocity = new Vector2(Mathf.Abs(randomVelocity) * moveSpeed * (-1), rigid.velocity.y);
+                    //FixRandomVelocity(false);
                 }
+                if (rayHitb1.collider != null || rayHitb2.collider != null || rayHitb3.collider != null)
+                {// find player back, turn
+                    Turn();
+                }
+                CancelInvoke();
+                Invoke("randomMove", 5);
+                if (!playerDetected)
+                {
+                    playerDetected = true;
+                    UpdateValue(1);
 
-                //FixRandomVelocity(true);
+                    // Start or restart the coroutine to reset the value after 5 seconds
+                    if (valueResetCoroutine != null)
+                    {
+                        StopCoroutine(valueResetCoroutine);
+                    }
+                }
             }
             else
             {
-                //FixRandomVelocity(false);
+                // Player not detected
+                //moveSpeed = 1f;
+                switchvalue = 0;
+                if (playerDetected)
+                {
+                    playerDetected = false;
+                    UpdateValue(2);
+                    if (valueResetCoroutine != null)
+                    {
+                        StopCoroutine(valueResetCoroutine);
+                    }
+                    valueResetCoroutine = StartCoroutine(ResetValueAfterDelay(5f));
+                }
             }
-            if (rayHitb1.collider != null || rayHitb2.collider != null || rayHitb3.collider != null)
-            {// find player back, turn
+            if (value == 2)
+            {
+                Invoke("Turn", 1);
+            }
+            if (!rayHit.collider && !anotherRayHit && jumpTime > 0)// if enemy go end of field
+            {
                 Turn();
             }
-            CancelInvoke();
-            Invoke("randomMove", 5);
-            if (!playerDetected)
-            {
-                playerDetected = true;
-                UpdateValue(1);
-
-                // Start or restart the coroutine to reset the value after 5 seconds
-                if (valueResetCoroutine != null)
-                {
-                    StopCoroutine(valueResetCoroutine);
-                }
-            }
-        }
-        else
-        {
-            // Player not detected
-            //moveSpeed = 1f;
-            switchvalue = 0;
-            if (playerDetected)
-            {
-                playerDetected = false;
-                UpdateValue(2);
-                if (valueResetCoroutine != null)
-                {
-                    StopCoroutine(valueResetCoroutine);
-                }
-                valueResetCoroutine = StartCoroutine(ResetValueAfterDelay(5f));
-            }
-        }
-        if (value == 2)
-        {
-            Invoke("Turn", 1);
-        }
-        if (!rayHit.collider && !anotherRayHit && jumpTime > 0)// if enemy go end of field
-        {
-            Turn();
         }
         if (randomVelocity != 0) spriteRenderer.flipX = randomVelocity != -1;
 
@@ -210,11 +216,15 @@ public class EnemyController : MonoBehaviour
 
         if (hp <= 0)
         {
-            die();
+            OnDie();
             GameManager.globalGameManager.adjustExp(exp);
             return true;
         }
-        else return false;
+        else
+        {
+            anim.SetTrigger("OnDamage");
+            return false;
+        }
     }
 
     void Turn()
@@ -223,15 +233,16 @@ public class EnemyController : MonoBehaviour
         CancelInvoke();
         Invoke("randomMove", 2);
     }
-    void die()
+
+    public void OnDie() { StartCoroutine(die()); }
+    IEnumerator die()
     {
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
+        isAlive = false;
         spriteRenderer.flipY = true;
-
         boxCollider.enabled = false;
-
-        Destroy(gameObject, 3f);
+        anim.SetTrigger("isDead");
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
     }
 
     void DeActive()
