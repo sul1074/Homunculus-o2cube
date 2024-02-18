@@ -13,13 +13,13 @@ public class TalkPrinter : MonoBehaviour
     public GameObject scanObject;
     public bool isTalking;
     public int talkIndex;
+    public int dialogueIndex;
     public GameObject blackBackGround;
     public GameObject playerSprite;
     public Image playerBlackBackground;
     public Image npcBlackBackground;
     Color color;
 
-    bool playerTalking;
 
     private void Awake()
     {
@@ -31,15 +31,15 @@ public class TalkPrinter : MonoBehaviour
 
         playerBlackBackground.color = new Color(0, 0, 0, 0);
         npcBlackBackground.color = new Color(0, 0, 0, 0);
-
-        playerTalking = true;
     }
 
     public void Talk(GameObject scanObj)
     {
         scanObject = scanObj;
+        interactionEvent dialogue = scanObject.GetComponent<interactionEvent>();
+
         NpcData npcData = scanObject.GetComponent<NpcData>();
-        Communicate(npcData.id, npcData.isNpc);
+        Communicate(dialogue);
 
         talkPanel.SetActive(isTalking);
         blackBackGround.SetActive(isTalking);
@@ -52,51 +52,58 @@ public class TalkPrinter : MonoBehaviour
         playerSprite.SetActive(isTalking);
     }
 
-    void Communicate(int id, bool isNpc)
+    void Communicate(interactionEvent dialogue)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
-
-        if (talkData == null) {
+        if (talkIndex > dialogue.dialogue.dialogues[dialogueIndex].contexts.Length - 1) {
             isTalking = false;
             talkIndex = 0;
-            playerTalking = true;
+            dialogueIndex++;
+        }
 
-            
-            SceneManager.LoadScene("Dungeon Generation");
+        if (dialogueIndex > dialogue.dialogue.dialogues.Length - 1)
+        {
+            isTalking = false;
+            talkIndex = 0;
+            dialogueIndex = 0;
+            playerBlackBackground.color = new Color(0, 0, 0, 0);
+            npcBlackBackground.color = new Color(0, 0, 0, 0);
+
+            if (dialogue.id == 1001) // 튜토리얼의 쓰러진 NPC를 처치
+            {
+                GameManager.globalGameManager.adjustExp(10f);
+                dialogue.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            }
 
             return;
         }
 
-        if (isNpc) {
-            talk.SetMsg(talkData.Split(':')[0]);
+        if (dialogue.isNpc)
+        {
+            talk.SetMsg(dialogue.dialogue.dialogues[dialogueIndex].contexts[talkIndex]);
 
-            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[1]));
+            portraitImg.sprite = talkManager.GetPortrait(dialogue.id, 0);
             portraitImg.color = new Color(1, 1, 1, 1);
-        }
-        else {
-            talk.SetMsg(talkData);
-
-            portraitImg.color = new Color(1, 1, 1, 0);
         }
 
         isTalking = true;
 
-        if (!playerTalking)
+        if (dialogue.dialogue.dialogues[dialogueIndex].isplayer)
         {
             talkIndex++;
             color = npcBlackBackground.color;
             color.a = 0.2f;
             playerBlackBackground.color = new Color(0, 0, 0, 0);
             npcBlackBackground.color = color;
-            playerTalking = true;
         }
         else
         {
+            talkIndex++;
             color = playerBlackBackground.color;
             color.a = 0.2f;
             playerBlackBackground.color = color;
             npcBlackBackground.color = new Color(0, 0, 0, 0);
-            playerTalking = false;
         }
+
+        
     }
 }

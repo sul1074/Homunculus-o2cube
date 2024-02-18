@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool restrictMoving;
     private float evasionPoint;
     private float hpRegenPoint;
+    private bool isAlive;
 
     private bool canDodge = true;
     private float dodgePower = 7.0f;
@@ -23,10 +24,12 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     public TalkPrinter talkPrinter;
     private GameObject interactingNPC = null;
+    private GameObject interactingITEM = null;
     public GameObject player;
     public Transform attackRangeBoxTransform;
-    bool playertalking;
 
+    public GameObject myWeapon;
+    private bool canRangedAttack = false;
     private Attack attack;
     private RangedAttack rangedAttack;
     private SpriteRenderer spriteRenderer;
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isAlive = true;
         jumpTime = 2;
         restrictMoving = false;
         attack = GetComponentInChildren<Attack>();
@@ -53,13 +57,13 @@ public class PlayerController : MonoBehaviour
         evasionPoint = playerStatus.getEvasionPoint();
         moveSpeed = playerStatus.getMoveSpeed();
         hpRegenPoint = playerStatus.getHpRegen();
-
-        playertalking = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) return;
+
         Vector2 mousePointer = getPointerInput();
         if (restrictMoving || anim.GetBool("isDodging")) return;
 
@@ -104,8 +108,8 @@ public class PlayerController : MonoBehaviour
         if (anim.GetBool("isDodging")) return;
 
         float randomVelocity = spriteRenderer.flipX ? 1.0f : -1.0f;
-        RaycastHit2D checkPlatform1 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.4275f), transform.position.y - 0.52638f), Vector2.left * randomVelocity * (-1), 0.865f, LayerMask.GetMask("Wall"));
-        RaycastHit2D checkPlatform2 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.4275f), transform.position.y - 0.52638f), Vector2.left * randomVelocity * (-1), 0.865f, LayerMask.GetMask("Platform"));
+        RaycastHit2D checkPlatform1 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.408f), transform.position.y - 0.90513f), Vector2.left * randomVelocity * (-1), 0.816f, LayerMask.GetMask("Wall"));
+        RaycastHit2D checkPlatform2 = Physics2D.Raycast(new Vector2(transform.position.x - (randomVelocity * 0.408f), transform.position.y - 0.90513f), Vector2.left * randomVelocity * (-1), 0.816f, LayerMask.GetMask("Platform"));
         if ((checkPlatform1.collider != null || checkPlatform2.collider != null) && jumpTime < 2)
         {
             anim.SetBool("isJumping", false);
@@ -125,12 +129,15 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)) // melee attack
             {
+                if (myWeapon.activeSelf == false) return;
+
                 attack.DoAttack(playerStatus.getAtkPoint());
                 curTime = coolTime;
             }
-
             else if (Input.GetKeyDown(KeyCode.X)) // ranged attack
             {
+                if (!canRangedAttack) return;
+
                 rangedAttack.Fire();
                 curTime = coolTime;
             }
@@ -176,16 +183,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && interactingNPC != null)
         {
-            if (playertalking == true)
-            {
-                talkPrinter.Talk(interactingNPC);
-                playertalking = false;
-            }
-            else if (playertalking == false)
-            {
-                talkPrinter.Talk(player);
-                playertalking = true;
-            }
+            talkPrinter.Talk(interactingNPC);
         }
     }
 
@@ -211,6 +209,8 @@ public class PlayerController : MonoBehaviour
             // 근접공격 범위 박스 위치 반대로 전환
             if (attackBoxLocalPosition.x < 0) return;
             attackRangeBoxTransform.localPosition = attackBoxLocalPosition;
+
+            rangedAttack.changePosition(1.0f);
         }
         else
         {
@@ -220,6 +220,8 @@ public class PlayerController : MonoBehaviour
             // 근접공격 범위 박스 위치 반대로 전환
             if (attackBoxLocalPosition.x > 0) return;
             attackRangeBoxTransform.localPosition = attackBoxLocalPosition;
+
+            rangedAttack.changePosition(-1.0f);
         }
     }
 
@@ -247,9 +249,10 @@ public class PlayerController : MonoBehaviour
         {
             interactingNPC = collision.gameObject;
         }
-        if (collision.gameObject.tag == "Enemy")
+
+        if (collision.gameObject.tag == "Item")
         {
-            OnDamaged(collision.transform.position, collision.gameObject);
+            interactingITEM = collision.gameObject;
         }
     }
 
@@ -259,6 +262,23 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("TalkDemo");
         }
+
+        if (collision.gameObject.tag == "Item" && Input.GetKey(KeyCode.E))
+        {
+            if (interactingITEM != null) {
+                if (interactingITEM.gameObject.name == "Sword") {
+                    myWeapon.SetActive(true);
+                    attack = GetComponentInChildren<Attack>();
+                }
+                else if (interactingITEM.gameObject.name == "Throwing Stars") {
+                    canRangedAttack = true;
+                }
+                    
+
+                Destroy(interactingITEM.gameObject);
+                interactingITEM = null;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -266,6 +286,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject == interactingNPC)
         {
             interactingNPC = null;
+        }
+
+        if (collision.gameObject == interactingITEM)
+        {
+            interactingITEM = null;
         }
     }
 
@@ -314,13 +339,16 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = 8;
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
-    public void OnDie()
+    public void OnDie() { StartCoroutine(die()); }
+    IEnumerator die()
     {
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
-        spriteRenderer.flipY = true;
-
-        gameObject.SetActive(false);
+        isAlive = false;
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+        gameObject.GetComponent<Rigidbody2D>().simulated = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        anim.SetTrigger("isDead");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("Dungeon Generation");
     }
     public void VelocityZero()
     {

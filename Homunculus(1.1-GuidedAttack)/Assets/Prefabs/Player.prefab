@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 8539584373427186184}
   - component: {fileID: 8539584373427186181}
   - component: {fileID: 8539584373427186186}
-  - component: {fileID: 8539584373427186180}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -154,8 +153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.5
   jumpPower: 7
+  fadeInOut: {fileID: 0}
   gameManager: {fileID: 0}
-  attack: {fileID: 0}
+  talkPrinter: {fileID: 0}
+  player: {fileID: 0}
+  attackRangeBoxTransform: {fileID: 0}
+  myWeapon: {fileID: 0}
 --- !u!114 &8539584373427186184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,17 +220,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 1.0625}
   m_EdgeRadius: 0
---- !u!114 &8539584373427186180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8539584373427186188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c996bd3c0d0eb4c8d766a4e3f40e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {fileID: 8539584372923778108}
-  boxSize: {x: 1, y: 1}

@@ -76,4 +76,9 @@ public class Attack : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, boxSize);
     }
+
+    public void setDirection(bool x) {
+
+        anim.SetBool("isRight", x);
+    }
 }

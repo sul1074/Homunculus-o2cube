@@ -84,7 +84,6 @@ public class GameManager : MonoBehaviour
         float calculatedDamage = playerStatus.getHitDamage(hitDamage);
 
         if (playerHp - calculatedDamage > 0) playerHp -= calculatedDamage;
-
         else
         {
             playerHp = 0;
