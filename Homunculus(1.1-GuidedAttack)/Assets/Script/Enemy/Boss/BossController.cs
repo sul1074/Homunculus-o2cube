@@ -29,6 +29,7 @@ public class BossController : MonoBehaviour
 
     //Script
     private float timer = 0.0f;
+    private bool detectPlayer = false;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -51,27 +52,31 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 5.0f)
+        if (detectPlayer)
         {
-            timer = 0.0f;
-            int patternRandom = Random.Range(1, 5);
-            switch (patternRandom)
+            timer += Time.deltaTime;
+            if (timer >= 5.0f)
             {
-                case 1:
-                    StartCoroutine(AttackPattern_1());
-                    break;
-                case 2:
-                    StartCoroutine(AttackPattern_2());
-                    break;
-                case 3:
-                    AttackPattern_3();
-                    break;
-                case 4:
-                    StartCoroutine(AttackPattern_4());
-                    break;
+                timer = 0.0f;
+                int patternRandom = Random.Range(1, 5);
+                switch (patternRandom)
+                {
+                    case 1:
+                        StartCoroutine(AttackPattern_1());
+                        break;
+                    case 2:
+                        StartCoroutine(AttackPattern_2());
+                        break;
+                    case 3:
+                        AttackPattern_3();
+                        break;
+                    case 4:
+                        StartCoroutine(AttackPattern_4());
+                        break;
+                }
             }
         }
+        
 
         HpRegenOvertime();
     }
@@ -123,6 +128,7 @@ public class BossController : MonoBehaviour
     void DetectPlayer()
     {
         anim.SetTrigger("detectPlayer");
+        detectPlayer = true;
     }
 
     //Attack
@@ -132,7 +138,7 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             attack = Instantiate(attack_1);
-            attack.transform.position = gameObject.transform.position + new Vector3(-5.0f -3.5f * i, 0.0f, 0.0f);
+            attack.transform.position = gameObject.transform.position + new Vector3(-5.0f -3.5f * i, 0.3f, 0.0f);
             attack.GetComponent<BossAttack>().pattenNum = 0;
             attack = null;
             yield return new WaitForSeconds(0.3f);
@@ -145,7 +151,7 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             attack = Instantiate(attack_1);
-            attack.transform.position = gameObject.transform.position + new Vector3(-2.5f - 5.0f * i, 0.0f, 0.0f);
+            attack.transform.position = gameObject.transform.position + new Vector3(-2.5f - 5.0f * i, 0.3f, 0.0f);
             attack.GetComponent<BossAttack>().pattenNum = 1;
             attack = null;
         }
@@ -153,7 +159,7 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             attack = Instantiate(attack_1);
-            attack.transform.position = gameObject.transform.position + new Vector3(- 5.0f * i, 0.0f, 0.0f);
+            attack.transform.position = gameObject.transform.position + new Vector3(- 5.0f * i, 0.3f, 0.0f);
             attack.GetComponent<BossAttack>().pattenNum = 1;
             attack = null;
         }
@@ -161,7 +167,7 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             attack = Instantiate(attack_1);
-            attack.transform.position = gameObject.transform.position + new Vector3(-2.5f - 5.0f * i, 0.0f, 0.0f);
+            attack.transform.position = gameObject.transform.position + new Vector3(-2.5f - 5.0f * i, 0.3f, 0.0f);
             attack.GetComponent<BossAttack>().pattenNum = 1;
             attack = null;
         }
@@ -169,7 +175,7 @@ public class BossController : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             attack = Instantiate(attack_1);
-            attack.transform.position = gameObject.transform.position + new Vector3(-5.0f * i, 0.0f, 0.0f);
+            attack.transform.position = gameObject.transform.position + new Vector3(-5.0f * i, 0.3f, 0.0f);
             attack.GetComponent<BossAttack>().pattenNum = 1;
             attack = null;
         }

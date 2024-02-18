@@ -15,15 +15,15 @@ C:/Users/user/Documents/GitHub/Homunculus-o2cube/Homunculus(1.1-GuidedAttack)
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57149
+62566
 Successfully changed project path to: C:/Users/user/Documents/GitHub/Homunculus-o2cube/Homunculus(1.1-GuidedAttack)
 C:/Users/user/Documents/GitHub/Homunculus-o2cube/Homunculus(1.1-GuidedAttack)
 Using Asset Import Pipeline V2.
-Player connection [42984] Host "[IP] 192.168.0.8 [Port] 3221443040 [Flags] 2 [Guid] 233176741 [EditorId] 233176741 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-BQV6JFU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19272] Host "[IP] 192.168.0.8 [Port] 3221443040 [Flags] 2 [Guid] 3561814663 [EditorId] 3561814663 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-BQV6JFU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [42984] Host "[IP] 192.168.0.8 [Port] 3221443040 [Flags] 2 [Guid] 233176741 [EditorId] 233176741 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-BQV6JFU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19272] Host "[IP] 192.168.0.8 [Port] 3221443040 [Flags] 2 [Guid] 3561814663 [EditorId] 3561814663 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-BQV6JFU) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 22.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 25.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.48f1 (b805b124c6b7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.48f1/Editor/Data/Resources/UnitySubsystems
@@ -39,99 +39,99 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.48f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.48f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.48f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56944
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.48f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000749 seconds.
+Registered in 0.000770 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 21.53 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 23.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.283 seconds
+- Completed reload, in  0.317 seconds
 Domain Reload Profiling:
-	ReloadAssembly (283ms)
+	ReloadAssembly (317ms)
 		BeginReloadAssembly (33ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (216ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (246ms)
 			LoadAssemblies (32ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (67ms)
+			SetupTypeCache (75ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (14ms)
-			SetupLoadedEditorAssemblies (83ms)
+			RebuildScriptCaches (16ms)
+			SetupLoadedEditorAssemblies (91ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (22ms)
-				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (39ms)
-				ProcessInitializeOnLoadMethodAttributes (13ms)
+				RefreshPlugins (23ms)
+				BeforeProcessingInitializeOnLoad (8ms)
+				ProcessInitializeOnLoadAttributes (41ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001441 seconds.
+Registered in 0.001746 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000029762699830 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-0000016A030DB230 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763E26010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-0000016A022D32E0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763EF81D0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-0000016A029D7220 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763C79230 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-0000016A029D7220 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763E58630 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-0000016A0231BC30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763D1F430 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-0000016A027C2C20 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763E58630 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-0000016A022D32E0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763C79230 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-0000016A02BF4050 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029762998010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-0000016A00987600 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763A9E070 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-0000016A02323C40 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763BDE010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-0000016A00B46040 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297639FC010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-0000016A00E41450 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000298FE1F3670 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-0000016BFCF35870 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 23.11 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 23.91 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.673 seconds
+- Completed reload, in  0.583 seconds
 Domain Reload Profiling:
-	ReloadAssembly (675ms)
-		BeginReloadAssembly (92ms)
+	ReloadAssembly (583ms)
+		BeginReloadAssembly (74ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (2ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (11ms)
-		EndReloadAssembly (553ms)
-			LoadAssemblies (49ms)
+		EndReloadAssembly (476ms)
+			LoadAssemblies (52ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (205ms)
+			SetupTypeCache (144ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (22ms)
-			SetupLoadedEditorAssemblies (208ms)
+			SetupLoadedEditorAssemblies (198ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (23ms)
-				BeforeProcessingInitializeOnLoad (45ms)
-				ProcessInitializeOnLoadAttributes (127ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
+				RefreshPlugins (24ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (116ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -139,15 +139,15 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
 Refreshing native plugins compatible for Editor in 0.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2045 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 113.8 MB.
-System memory in use after: 113.8 MB.
+Unloading 2050 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 114.0 MB.
+System memory in use after: 114.0 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2503.
-Total: 1.664700 ms (FindLiveObjects: 0.070100 ms CreateObjectMapping: 0.023500 ms MarkObjects: 1.485000 ms  DeleteObjects: 0.085500 ms)
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2508.
+Total: 1.666700 ms (FindLiveObjects: 0.072100 ms CreateObjectMapping: 0.023200 ms MarkObjects: 1.475400 ms  DeleteObjects: 0.095300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -162,246 +162,175 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Animation/Animation/Enemy/Boss/Boss.controller
-  artifactKey: Guid(0904c71cfdbeba546b040dc65f7caaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Animation/Enemy/Boss/Boss.controller using Guid(0904c71cfdbeba546b040dc65f7caaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43e7e02cef06d20809c582614fa9544c') in 0.058096 seconds 
+  path: Assets/Script/Enemy/Boss/BossController.cs
+  artifactKey: Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Enemy/Boss/BossController.cs using Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a32a7c196e5b2d24a3b4fb94ef32d69') in 0.029298 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.361822 seconds.
+  path: Assets/Script/Enemy/Boss/BossController.cs
+  artifactKey: Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Enemy/Boss/BossController.cs using Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b930ee94e22bcdd2284917aabb24873e') in 0.002468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.486949 seconds.
+  path: Assets/Script/Enemy/Boss/BossController.cs
+  artifactKey: Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Enemy/Boss/BossController.cs using Guid(c9b7b00bc1f4cd542ba6b5094bc611e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b261f6d5d438ecdd0dd7cf7d202f34e') in 0.002637 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004820 seconds.
+Registered in 0.001404 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000029764378E80 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-0000016A054F76C0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029765077030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-0000016A03BF3030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976399D010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-0000016A069EF020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297681F6540 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-0000016A02F680C0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000298FEAC2030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-0000016A02F680C0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976238A330 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-0000016A00CA7EC0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297623BA340 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-0000016A05DEB040 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763749050 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-0000016A00CCF0D0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976511F040 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-0000016BFD867050 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976352C640 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-0000016A00CCF0D0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763574230 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-0000016BFD867050 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767A27030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-0000016A0074C240 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029768D9E0A0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-0000016A07177FA0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.29 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.114 seconds
+- Completed reload, in  0.524 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1115ms)
-		BeginReloadAssembly (135ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (920ms)
-			LoadAssemblies (99ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (317ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (50ms)
-			SetupLoadedEditorAssemblies (342ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (104ms)
-				ProcessInitializeOnLoadAttributes (206ms)
-				ProcessInitializeOnLoadMethodAttributes (14ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2038 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 113.6 MB.
-System memory in use after: 113.6 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2507.
-Total: 2.411100 ms (FindLiveObjects: 0.136500 ms CreateObjectMapping: 0.049900 ms MarkObjects: 2.120500 ms  DeleteObjects: 0.103400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001460 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000029768408A30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029769004FD0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763A62020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976489D020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976489D020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767FA6640 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767ACD020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029763D2BE40 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297636BD020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976A035060 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297638E7020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000297699C9E20 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029773514670 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.513 seconds
-Domain Reload Profiling:
-	ReloadAssembly (513ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (524ms)
+		BeginReloadAssembly (70ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (417ms)
-			LoadAssemblies (50ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (420ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (141ms)
+			SetupTypeCache (140ms)
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (164ms)
+			SetupLoadedEditorAssemblies (165ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (2ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (43ms)
-				ProcessInitializeOnLoadAttributes (110ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (2ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.28 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2038 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 113.7 MB.
-System memory in use after: 113.7 MB.
-
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2510.
-Total: 1.848500 ms (FindLiveObjects: 0.091500 ms CreateObjectMapping: 0.024000 ms MarkObjects: 1.649700 ms  DeleteObjects: 0.082600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001544 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-0000029762B45A30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767785020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976351DC30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767785020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767785020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976354D020 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029764DAA030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767C6DC30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029762872620 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767C6DC30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976AB40040 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000029767B1F050 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002976AAA3260 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.549 seconds
-Domain Reload Profiling:
-	ReloadAssembly (549ms)
-		BeginReloadAssembly (71ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (445ms)
-			LoadAssemblies (50ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (159ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (171ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (46ms)
-				ProcessInitializeOnLoadAttributes (114ms)
+				BeforeProcessingInitializeOnLoad (42ms)
+				ProcessInitializeOnLoadAttributes (112ms)
 				ProcessInitializeOnLoadMethodAttributes (5ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (2ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.28 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2038 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 113.7 MB.
-System memory in use after: 113.7 MB.
+Unloading 2043 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 113.8 MB.
 
-Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2513.
-Total: 1.765400 ms (FindLiveObjects: 0.093600 ms CreateObjectMapping: 0.023100 ms MarkObjects: 1.574300 ms  DeleteObjects: 0.073900 ms)
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2511.
+Total: 1.622700 ms (FindLiveObjects: 0.073700 ms CreateObjectMapping: 0.023500 ms MarkObjects: 1.436100 ms  DeleteObjects: 0.088600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001442 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000016A1232AD60 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A0221B010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A00CCCAD0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A03BF3030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016BFCFB9190 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A01267010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A03D93030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A05D57C30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A00713A00 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A05D57C30 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A00C31010 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A025A7030 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000016A071755B0 doesn't match image C:\Users\user\Documents\GitHub\Homunculus-o2cube\Homunculus(1.1-GuidedAttack)\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.509 seconds
+Domain Reload Profiling:
+	ReloadAssembly (509ms)
+		BeginReloadAssembly (68ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (410ms)
+			LoadAssemblies (49ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (133ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (20ms)
+			SetupLoadedEditorAssemblies (168ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (115ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (2ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2043 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 113.8 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 2514.
+Total: 1.510200 ms (FindLiveObjects: 0.064500 ms CreateObjectMapping: 0.024200 ms MarkObjects: 1.348100 ms  DeleteObjects: 0.073000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 

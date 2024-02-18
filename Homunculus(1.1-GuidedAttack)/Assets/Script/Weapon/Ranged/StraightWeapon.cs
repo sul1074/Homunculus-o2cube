@@ -23,6 +23,11 @@ public class StraightWeapon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            if (collision.gameObject.GetComponent<BossController>() != null)
+            {
+                collision.gameObject.GetComponent<BossController>().OnDamaged(10.0f);
+                Destroy(this.gameObject);
+            }
             collision.gameObject.GetComponent<EnemyController>().OnDamaged(10.0f);
             Destroy(this.gameObject);
         }
