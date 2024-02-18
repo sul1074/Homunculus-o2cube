@@ -43,12 +43,27 @@ public class Attack : MonoBehaviour
                 {
                     if (Random.Range(0.0f, 100.0f) <= critPoint)
                     {
-                        collider.GetComponent<EnemyController>().OnDamaged(damage * critAtk * 0.01f);
-                        Debug.Log("Crit!");
+                        if (collider.GetComponent<EnemyController>() != null)
+                        {
+                            collider.GetComponent<EnemyController>().OnDamaged(damage * critAtk * 0.01f);
+                            Debug.Log("Crit!");
+                        }
+                        else if (collider.GetComponent<BossController>() != null)
+                        {
+                            collider.GetComponent<BossController>().OnDamaged(damage * critAtk * 0.01f);
+                            Debug.Log("Crit!");
+                        }
                     }
                     else
                     {
-                        collider.GetComponent<EnemyController>().OnDamaged(damage);
+                        if (collider.GetComponent<EnemyController>() != null)
+                        {
+                            collider.GetComponent<EnemyController>().OnDamaged(damage);
+                        }
+                        else if (collider.GetComponent<BossController>() != null)
+                        {
+                            collider.GetComponent<BossController>().OnDamaged(damage);
+                        }
                     }
                     break;
                 }

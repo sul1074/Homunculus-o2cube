@@ -247,6 +247,10 @@ public class PlayerController : MonoBehaviour
         {
             interactingNPC = collision.gameObject;
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            OnDamaged(collision.transform.position, collision.gameObject);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
