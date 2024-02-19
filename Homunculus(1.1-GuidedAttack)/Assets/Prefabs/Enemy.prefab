@@ -296,7 +296,7 @@ MonoBehaviour:
   lv: 0
   expMax: 0
   exp: 8
-  hpMax: 10
+  hpMax: 15
   hp: 0
   hpRegen: 1
   mpMax: 0

@@ -18,6 +18,7 @@ public class BossController : MonoBehaviour
     private GameObject player;
 
     //Status
+    private bool isAlive;
     private float moveSpeed;
     private float atk;
     private float exp;
@@ -32,6 +33,7 @@ public class BossController : MonoBehaviour
     private bool detectPlayer = false;
     void Start()
     {
+        isAlive = true;
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -121,6 +123,8 @@ public class BossController : MonoBehaviour
 
         boxCollider.enabled = false;
 
+        isAlive = false;
+
         Destroy(gameObject, 3f);
     }
 
@@ -202,4 +206,6 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
+
+    public bool getIsAlive() { return isAlive; }
 }

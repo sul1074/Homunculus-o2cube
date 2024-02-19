@@ -6,12 +6,15 @@ using UnityEngine.EventSystems;
 
 public class EngravingButton : MonoBehaviour
 {
+    public Sprite actived_img;
+    public Sprite activable_img;
+    public Sprite inactived_img;
+
     public Engraving engravingSystem;
     public EngravingButton parent;
     private int numOfChild;
     public EngravingButton[] child;
     private Image image;
-    public Text text;
     public bool actived;
     public bool actable;
 
@@ -51,6 +54,9 @@ public class EngravingButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AlphaThreshold = 0.1f;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
+
         CheckActable();
 
         ChangeColor();
@@ -60,18 +66,15 @@ public class EngravingButton : MonoBehaviour
     {
         if (actived == true)
         {
-            image.color = new Color(1, 1, 1, 1);
-            text.color = new Color(0, 0, 0, 1);
+            image.sprite = actived_img;
         }
         else if (actived == false && actable == true)
         {
-            image.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            text.color = new Color(1, 1, 1, 1);
+            image.sprite = activable_img;
         }
         else if (actived == false && actable == false)
         {
-            image.color = new Color(0, 0, 0, 1);
-            text.color = new Color(1, 1, 1, 1);
+            image.sprite = inactived_img;
         }
     }
 

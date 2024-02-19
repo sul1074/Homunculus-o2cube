@@ -29,25 +29,17 @@ public class DungeonDoor : MonoBehaviour
         }  던전 간의 이동 시에 화면이 버벅이는 문제 때문에 해당 코드를 OnTriggerEnter2D에 옮겼음 */
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            playerController = collision.GetComponent<PlayerController>();
+            playerController = collision.gameObject.GetComponent<PlayerController>();
             //isInDoorArea = true;
 
             // 여기서부터 Update에서 옮긴 코드
             if (isEnemyInTheRoom() == true || playerController == null) return;
 
             StartCoroutine(playerController.TeleportInDungeon(getNextRoomPos()));
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            //isInDoorArea = false;
         }
     }
 
@@ -90,7 +82,7 @@ public class DungeonDoor : MonoBehaviour
         {
             hitData =  Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 10f), transform.up, maxRayDistance, LayerMask.GetMask("RoomScanner"));
             nextRoomPos = hitData.transform.Find("South Door").transform.position;
-            nextRoomPos = new Vector2(nextRoomPos.x + 2f, nextRoomPos.y + 2.5f);
+            nextRoomPos = new Vector2(nextRoomPos.x, nextRoomPos.y + 3f);
             return nextRoomPos;
         }
     }

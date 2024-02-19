@@ -26,5 +26,9 @@ public class Tooltip : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void setPosition() { transform.position = Input.mousePosition; }
+    private void setPosition()
+    {
+        Vector3 newPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y - 50f, 0f);
+        transform.position = newPos; 
+    }
 }

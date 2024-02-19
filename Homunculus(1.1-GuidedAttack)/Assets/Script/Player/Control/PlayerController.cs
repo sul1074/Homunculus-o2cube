@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour
             talkPrinter.Talk(interactingNPC);
         }
     }
+    public void forcedTalk(GameObject interactingNPC) { talkPrinter.Talk(interactingNPC); }
 
     private void RotateWeapon(Vector2 dir)
     {
@@ -235,6 +236,8 @@ public class PlayerController : MonoBehaviour
         transform.position = teleportPos;
         yield return new WaitForSeconds(fadeInOut.GetFadeDurationTime() * 1.25f);
         restrictMoving = false;
+        anim.SetBool("isJumping", false);
+        jumpTime = 2;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -265,11 +268,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Exit Door" && Input.GetKey(KeyCode.F))
-        {
-            SceneManager.LoadScene("TalkDemo");
-        }
-
         if (collision.gameObject.tag == "Item" && Input.GetKey(KeyCode.E))
         {
             if (interactingITEM != null) {
@@ -311,13 +309,13 @@ public class PlayerController : MonoBehaviour
     void OnDamaged(Vector2 targetPos,GameObject target)
     {
         gameObject.layer = 9;
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
         float enemyCritPoint = target.GetComponent<EnemyStatus>().critPoint;
         float enemyCritAtk = target.GetComponent<EnemyStatus>().critAtk;
         Debug.Log(target.GetComponent<EnemyStatus>().hpMax);
 
         if (Random.Range(0.0f, 100.0f) <= evasionPoint)
         {
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f);
             Debug.Log("È¸ÇÇ!");
         }
         else
@@ -356,7 +354,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         anim.SetTrigger("isDead");
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Dungeon Generation");
+        SceneManager.LoadScene("Main");
     }
     public void VelocityZero()
     {

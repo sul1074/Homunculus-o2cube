@@ -50,6 +50,12 @@ public class TalkPrinter : MonoBehaviour
             portraitImg.color = new Color(1, 1, 1, 0);
         }
         playerSprite.SetActive(isTalking);
+
+        if(scanObj.GetComponent<interactionEvent>().dialogue.name == "µ¶¹é")
+        {
+            npcBlackBackground.color = new Color(0, 0, 0, 0);
+            portraitImg.color = new Color(0, 0, 0, 0);
+        }
     }
 
     void Communicate(interactionEvent dialogue)
@@ -73,6 +79,12 @@ public class TalkPrinter : MonoBehaviour
                 GameManager.globalGameManager.adjustExp(10f);
                 dialogue.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             }
+            else if (dialogue.id == 1002)
+            {
+                SceneManager.LoadScene("Ending Credit");
+            }
+
+
 
             return;
         }
@@ -104,6 +116,6 @@ public class TalkPrinter : MonoBehaviour
             npcBlackBackground.color = new Color(0, 0, 0, 0);
         }
 
-        
+
     }
 }
